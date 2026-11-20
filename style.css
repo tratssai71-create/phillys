@@ -2731,3 +2731,5 @@ main,footer,.cta2{overflow-x:clip}
 .vl-txt{container-type:inline-size}
 .vl-txt h3{font-size:min(var(--t6),calc(100cqw / 13.4))!important}
 @media(max-width:1000px){.vl-txt h3{font-size:min(var(--t5),calc(100cqw / 13.4))!important}}
+/* Safari never breaks between two adjacent nowrap spans — make each phrase its own box so the gap is always a break point */
+.nw{display:inline-block}
