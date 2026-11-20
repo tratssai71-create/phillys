@@ -245,3 +245,5 @@ blockquote{border:1px solid var(--ln)}
  .fv2-box .fv-h{font-size:30px}
  .fv2-box .fv-tel{display:flex}
 }
+.fv2-photo img{object-position:50% 30%}
+@media(max-width:700px){.fv2-photo img{object-position:78% 30%}}
