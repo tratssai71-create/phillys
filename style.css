@@ -2672,3 +2672,13 @@ html,body{max-width:100%;overflow-x:clip}
 }
 /* aspect-ratio + min-height was forcing a 388px-wide photo on narrow phones */
 @media(max-width:1000px){.pg-hero-ph,.rc-hero-ph,.fv4-photo,.mf-ph,.kv-ph,.photo{min-height:0!important;width:100%;max-width:100%!important}}
+/* ===== mobile manifesto: centred vertical title, balanced text ===== */
+@media(max-width:1000px){
+ .mf-panel{flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:var(--s5)!important;padding:var(--s6) var(--s4) var(--s6)!important}
+ .mf-h{align-self:center;font-size:min(var(--t6),9vw)!important;letter-spacing:.2em}
+ .mf-h span+span{margin-top:var(--s6)!important}
+ .mf-body{width:100%;max-width:26em!important;margin:0 auto;padding-top:var(--s5)!important;border-top:1px solid rgba(255,255,255,.18)}
+ .mf-body p{text-wrap:balance;word-break:auto-phrase}
+ .mf-sign{text-align:left}
+}
+@media(max-width:1000px){.mf-lead span{display:block}}
