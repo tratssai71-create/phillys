@@ -2,7 +2,7 @@
 (function () {
   var ARW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var SPEED = 16.18; // px per second — slow drift (16 × φ / φ)
+  var SPEED = 25.9; // px per second — slow drift (16 × φ / φ)
 
   Array.prototype.forEach.call(document.querySelectorAll('.ab3-gal'), function (track) {
     var slides = Array.prototype.slice.call(track.children);
