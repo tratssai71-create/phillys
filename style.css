@@ -2215,3 +2215,9 @@ p{margin-bottom:var(--s3)}
  .mn-b:focus-visible{outline:2px solid var(--g);outline-offset:2px;border-radius:50%}
 }
 @media(max-width:1000px) and (prefers-reduced-motion:reduce){.mn-b i:before,.mn-b i:after{transition:none!important}}
+/* ===== fonts v3: Zen Kaku Gothic New × Zen Old Mincho ===== */
+:root{--f-sans:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;--f-serif:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho","YuMincho",serif}
+body,button,input,select,textarea,.gn a,.btn,.sv4-btn,.cf,.cta2-acts,.hd-cta,.mbar3,table,dl{font-family:var(--f-sans)}
+body{letter-spacing:.06em}
+.fv4-h,.ab3-ttl h2,.pg-h,.st-h,.mf-h{font-weight:600}
+.fv4-lead{letter-spacing:.04em}
