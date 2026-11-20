@@ -39,18 +39,21 @@
 
     function setW() { return reduce ? 0 : slides[0].offsetLeft - all[0].offsetLeft; } // width of one set (offset of first real slide)
     function startX(i) { return all[i].offsetLeft - all[0].offsetLeft; }
-    var setWidth = 0, pos = 0;
+    var setWidth = 0, pos = 0, d = 0;
+    function eff() { return track.scrollLeft + d; }
+    function setD(v) { d = v; track.style.setProperty('--dx', (-d).toFixed(3) + 'px'); }
+    function commit() { if (!d) return; var x = Math.round(track.scrollLeft + d); setD(0); track.scrollLeft = x; }
 
     function curIndex() {
-      var x = track.scrollLeft, best = 0, bd = Infinity;
-      all.forEach(function (s, i) { var d = Math.abs(startX(i) - x); if (d < bd) { bd = d; best = i; } });
+      var x = eff(), best = 0, bd = Infinity;
+      all.forEach(function (s, i) { var dd = Math.abs(startX(i) - x); if (dd < bd) { bd = dd; best = i; } });
       return best % N;
     }
     function update() {
       var i = curIndex();
       count.textContent = String(i + 1).padStart(2, '0');
       Array.prototype.forEach.call(dotEls, function (d, k) { d.classList.toggle('on', k === i); d.setAttribute('aria-current', k === i ? 'true' : 'false'); });
-      all.forEach(function (s, k) { s.classList.toggle('crs-on', k % N === i && Math.abs(startX(k) - track.scrollLeft) < s.offsetWidth * 0.6); });
+      all.forEach(function (s, k) { s.classList.toggle('crs-on', k % N === i && Math.abs(startX(k) - eff()) < s.offsetWidth * 0.6); });
       if (reduce) { prev.disabled = i === 0; next.disabled = i === N - 1; }
     }
     function wrapPos() {
@@ -61,19 +64,23 @@
 
     /* drift */
     var paused = false, resumeT, last = 0, visible = true;
-    function pause(ms) { paused = true; clearTimeout(resumeT); resumeT = setTimeout(function () { paused = false; pos = track.scrollLeft; }, ms || 2618); }
+    function pause(ms) { commit(); paused = true; clearTimeout(resumeT); resumeT = setTimeout(function () { paused = false; pos = track.scrollLeft; }, ms || 2618); }
+    var lastUpd = 0;
     function tick(t) {
       requestAnimationFrame(tick);
-      var dt = last ? Math.min(64, t - last) : 16; last = t;
+      var dt = last ? Math.min(50, t - last) : 16; last = t;
       if (reduce || paused || !visible || document.hidden) return;
-      pos += SPEED * dt / 1000;
-      track.scrollLeft = pos;
-      if (track.scrollLeft >= setWidth * 2) { pos -= setWidth; track.scrollLeft = pos; }
+      setD(d + SPEED * dt / 1000);
+      if (track.scrollLeft + d >= setWidth * 2) {
+        var x = track.scrollLeft + d - setWidth, base = Math.floor(x);
+        track.scrollLeft = base; setD(x - base);
+      }
+      if (t - lastUpd > 250) { lastUpd = t; update(); }
     }
     function goRel(dir) {
       pause(4236);
-      var i = 0, x = track.scrollLeft, bd = Infinity;
-      all.forEach(function (s, k) { var d = Math.abs(startX(k) - x); if (d < bd) { bd = d; i = k; } });
+      var i = 0, x = eff(), bd = Infinity;
+      all.forEach(function (s, k) { var dd = Math.abs(startX(k) - x); if (dd < bd) { bd = dd; i = k; } });
       var target = all[Math.max(0, Math.min(all.length - 1, i + dir))];
       track.scrollTo({ left: startX(all.indexOf(target)), behavior: 'smooth' });
     }
@@ -90,18 +97,18 @@
       if (e.key === 'ArrowLeft') { e.preventDefault(); goRel(-1); }
     });
     ['pointerdown', 'touchstart', 'wheel'].forEach(function (ev) { track.addEventListener(ev, function () { pause(2618); }, { passive: true }); });
-    track.addEventListener('mouseenter', function () { paused = true; clearTimeout(resumeT); });
+    track.addEventListener('mouseenter', function () { commit(); paused = true; clearTimeout(resumeT); });
     track.addEventListener('mouseleave', function () { pause(800); });
     track.addEventListener('focusin', function () { pause(6000); });
 
     var raf; track.addEventListener('scroll', function () {
       cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(function () { if (paused) { wrapPos(); pos = track.scrollLeft; } update(); });
+      raf = requestAnimationFrame(function () { if (paused) { wrapPos(); } update(); });
     }, { passive: true });
 
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(track);
     function init() { setWidth = setW(); track.scrollLeft = setWidth; pos = setWidth; update(); }
-    addEventListener('resize', function () { var i = curIndex(); setWidth = setW(); track.scrollLeft = startX(reduce ? i : N + i); pos = track.scrollLeft; update(); });
+    addEventListener('resize', function () { commit(); var i = curIndex(); setWidth = setW(); track.scrollLeft = startX(reduce ? i : N + i); pos = track.scrollLeft; update(); });
     if (document.readyState === 'complete') init(); else addEventListener('load', init);
     if (!reduce) requestAnimationFrame(tick);
   });
