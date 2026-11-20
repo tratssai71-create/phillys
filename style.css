@@ -224,3 +224,24 @@ blockquote{border:1px solid var(--ln)}
 .strip b{color:var(--gd)}
 .strip li+li{border-left:1px solid var(--ln)}
 @media(max-width:900px){.strip li+li{border-left:0}}
+
+/* ===== FV v3: photo first ===== */
+.fv2{position:relative;background:#fff}
+.fv2-photo{aspect-ratio:auto;height:min(72vh,680px);min-height:420px;border-radius:0;max-width:none}
+.fv2-body{position:relative;max-width:1200px;margin:-180px auto 0;padding:0 24px 64px}
+.fv2-box{position:relative;background:#fff;max-width:600px;padding:44px 48px 40px;border-top:4px solid var(--g)}
+.fv2-place{margin:0 0 14px;color:var(--gd);font-size:14px;letter-spacing:.08em}
+.fv2-box .fv-h{font-size:clamp(30px,3.8vw,46px);margin:0 0 20px}
+.fv2-lead{margin:0 0 28px;line-height:2.05}
+.fv2-box .fv-tel{display:inline-flex}
+@media(max-width:1000px){
+ .fv2-photo{height:56vh;min-height:300px}
+ .fv2-body{margin-top:-80px;padding:0 16px 48px}
+ .fv2-box{padding:32px 24px 28px}
+}
+@media(max-width:520px){
+ .fv2-photo{height:46vh;min-height:260px}
+ .fv2-body{margin-top:-48px}
+ .fv2-box .fv-h{font-size:30px}
+ .fv2-box .fv-tel{display:flex}
+}
