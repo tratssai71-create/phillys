@@ -65,7 +65,8 @@
   });
 
   /* ---- hero intro ---- */
-  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('mo-ready'); }); });
+  function ready() { requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('mo-ready'); }); }); }
+  if (root.classList.contains('ld-on')) document.addEventListener('ph:loaded', ready, { once: true }); else ready();
   /* replay the headline motion when the page is shown again (back/forward cache) */
   addEventListener('pageshow', function (e) {
     if (!e.persisted) return;

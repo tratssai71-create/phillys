@@ -2630,3 +2630,24 @@ a[href^="tel:"],.nw{white-space:nowrap}
 /* partner orgs: one column on narrow phones */
 @media(max-width:420px){.nt-orgs{grid-template-columns:1fr!important}}
 @media(max-width:600px){.nt-docs li{display:grid!important;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:var(--s3);row-gap:var(--s1);align-items:start}.nt-doc-ic{grid-row:1/3}.nt-doc-s{justify-self:start}}
+
+/* ===================== LOADING ===================== */
+.ld{display:none}
+.ld-on .ld{display:grid;place-items:center;position:fixed;inset:0;z-index:100;background:#FBFAF9;transition:opacity 1s cubic-bezier(.4,0,.2,1),visibility 0s linear 1s}
+.ld-on.ld-out .ld{opacity:0;visibility:hidden}
+.ld-on body{overflow:hidden}
+.ld-in{display:flex;flex-direction:column;align-items:center;gap:0;transition:transform 1s cubic-bezier(.4,0,.2,1),opacity 1s cubic-bezier(.4,0,.2,1)}
+.ld-on.ld-out .ld-in{transform:translate3d(0,-10px,0);opacity:0}
+.ld-mark{position:relative;width:110px;height:110px;display:grid;place-items:center}
+.ld-mark img{width:68px;height:68px;opacity:0;animation:ld-fade 1.236s cubic-bezier(.4,0,.2,1) .236s forwards}
+.ld-ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.ld-ring circle{fill:none;stroke:#B8A273;stroke-width:1;stroke-linecap:round;stroke-dasharray:358.1;stroke-dashoffset:358.1;animation:ld-draw 1.618s cubic-bezier(.65,0,.35,1) .382s forwards}
+.ld-name{margin:var(--s4) 0 0;font-family:"Cormorant Garamond","Times New Roman",serif;font-style:italic;font-size:var(--t5);letter-spacing:.16em;color:#1F4F7A;line-height:1;opacity:0;animation:ld-rise 1.236s cubic-bezier(.16,1,.3,1) .854s forwards}
+.ld-sub{margin:var(--s2) 0 0;font-size:var(--t1);letter-spacing:.24em;color:#5B6876;line-height:1;opacity:0;animation:ld-rise 1.236s cubic-bezier(.16,1,.3,1) 1.09s forwards}
+@keyframes ld-draw{to{stroke-dashoffset:0}}
+@keyframes ld-fade{to{opacity:1}}
+@keyframes ld-rise{from{opacity:0;transform:translate3d(0,6px,0)}to{opacity:1;transform:none}}
+/* safety: never block the page if scripts fail */
+.ld-on .ld{animation:ld-safety 0s linear 6s forwards}
+@keyframes ld-safety{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.ld{display:none!important}}
