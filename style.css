@@ -1185,3 +1185,41 @@ html.modal-open{overflow:hidden}
  .fv4-tel{font-size:22px}
 }
 @media(max-width:374px){.ab3-name b{font-size:13px}.ab3-name span{padding:4px 8px}}
+/* ===== typography system ===== */
+:root{--f-sans:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;--f-serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;--f-en:"Cormorant Garamond","Times New Roman",serif}
+/* 見出し: 明朝 */
+.fv4-h,.ab3-ttl h2,.pg-h,.ab3-body h3,.sv4-txt h3,.vl-txt h3,.og h2,.cta2 h2,.rc-h,.vp-card h3,.vc-sum b,.ft2-catch,.nt-body h2,.pr-h,.pr-h2,.pr-head h2,.rc-ben h3,.sp-who b,.svm-body h3,.ab3-gal b,.sv3-txt h3,.cf-done h2,.pg-catch,.rc-catch,.ab-what .sv3-intro b,.sv3-intro b{font-family:var(--f-serif);font-weight:600;letter-spacing:.06em}
+.fv4-h{font-weight:600;letter-spacing:.08em;line-height:1.55}
+.ab3-ttl h2,.pg-h{font-weight:600;letter-spacing:.08em}
+.vc-sum b,.ab3-gal b{font-weight:600;letter-spacing:.04em}
+/* 英字ラベル・番号: Cormorant */
+.ab3-en,.ab3-en.sm{font-family:var(--f-en);font-style:italic;font-weight:500;letter-spacing:.02em;line-height:.9}
+.sv4-no,.vl-no,.vp-no,.nt-no,.rc-bn,.cta2-en,.og-en,.sv3-en{font-family:var(--f-en);font-weight:600;letter-spacing:.08em}
+.sv4-no{font-size:34px;color:#9fb3c8}
+.sv4-no:after{background:#9fb3c8}
+.nt-no{font-size:42px;color:#a9bccf}
+.rc-bn{font-size:34px;color:#a9bccf}
+.vp-no{font-size:34px}
+.vl-no,.sv3-en{font-size:16px;letter-spacing:.14em}
+.cta2-en,.og-en{font-size:17px;letter-spacing:.16em}
+/* 本文・UI: ゴシック */
+body,.gn a,.btn,.sv4-btn,.cf,.cta2-acts,.hd-cta,.mbar,table,dl{font-family:var(--f-sans)}
+/* quieter, more refined surfaces */
+.ab3-ttl:after{height:2px}
+.sv4{border-radius:4px}
+.sv4-ph,.ab3-ph,.vl-ph,.ar3-ph{border-radius:4px}
+.ab3-ph{box-shadow:0 10px 24px rgba(31,79,122,.10)}
+.vc-item,.vp-card,.am-fig,.fv4-card,.pr-card,.cf{box-shadow:0 4px 14px rgba(31,79,122,.06)}
+.vc-item[open]{box-shadow:0 8px 22px rgba(31,79,122,.09)}
+.fv4-chip,.rc-tagline{border-radius:2px}
+.sv4-btn,.cf-submit{border-radius:2px;letter-spacing:.08em}
+.hd-cta{border-radius:2px}
+@media(max-width:1000px){
+ .ab3-en,.ab3-en.sm{font-size:58px;margin-bottom:-.18em}
+ .ab3-ttl h2,.pg-h{font-size:27px}
+ .fv4-h{font-size:31px}
+ .sv4-no{font-size:28px}
+}
+.sv4-no,.vl-no,.vp-no,.nt-no,.rc-bn,.ab3-en,.cta2-en,.og-en,.sv3-en{font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+.ab3-name b,.og-eq b{font-family:var(--f-en);font-weight:600;font-size:1.25em;letter-spacing:.02em}
+@media(max-width:1000px){.ab3-name b{font-size:18px}}
