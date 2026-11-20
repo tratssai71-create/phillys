@@ -826,3 +826,39 @@ html.modal-open{overflow:hidden}
 }
 @media(max-width:600px){.sp-who{grid-template-columns:1fr}.sp-price-body dl>div{flex-direction:column;gap:2px}}
 .ab3-ttl h2.h2-sm{font-size:clamp(24px,2.4vw,32px);white-space:normal;line-height:1.45}
+
+/* ===== price page ===== */
+.pr-hero{padding-bottom:16px}
+.pr-hero .sp-jump{margin-bottom:24px}
+.pr-sec{padding:88px 0;scroll-margin-top:90px}
+.pr-alt{background:#f5f8fc}
+.pr-head{margin-bottom:32px}
+.pr-head h2{margin:10px 0 6px}
+.pr-tag{display:inline-block;padding:3px 12px;border-radius:3px;background:var(--gd);color:#fff;font-size:13px;font-weight:700;letter-spacing:.06em}
+.pr-tag2{background:#5f7d99}
+.pr-note{margin:0;font-size:14px;color:var(--mut)}
+.pr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.pr-card{background:#fff;border:1px solid var(--ln);border-radius:8px;padding:32px 32px 28px;min-width:0;scroll-margin-top:90px}
+.pr-alt .pr-card{border-color:#e1e9f1}
+.pr-h{margin:0 0 20px;padding-bottom:14px;border-bottom:2px solid var(--gd);font-size:22px;color:var(--gd)}
+.pr-h2{margin:12px 0 6px;font-size:22px;color:var(--gd)}
+.pr-sub{margin:20px 0 6px;font-size:14px;font-weight:700;color:var(--ink)}
+.pr-h+.pr-sub{margin-top:0}
+.pr-tbl{width:100%;border-collapse:collapse;margin:0;background:none}
+.pr-tbl th,.pr-tbl td{border:0;border-bottom:1px solid var(--ln);background:none;padding:13px 4px;font-size:15px}
+.pr-tbl th{text-align:left;font-weight:400;width:auto}
+.pr-tbl td{text-align:right;white-space:nowrap;font-weight:400}
+.pr-tbl td b{font-size:22px;color:var(--gd);margin-right:2px;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.pr-card .pr-tbl{margin-top:16px}
+.pr-big{margin:28px 0 0;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.pr-big small{font-size:15px;color:var(--ink);margin-right:8px}
+.pr-big b{font-size:52px;line-height:1;color:var(--gd);font-variant-numeric:tabular-nums}
+.pr-area{display:grid;grid-template-columns:minmax(360px,1fr) minmax(0,1.8fr);gap:56px;align-items:end}
+.pr-area-txt{margin:0;font-size:17px;line-height:2}
+.pr-area .ab3-more{justify-content:flex-start}
+@media(max-width:1000px){
+ .pr-sec{padding:56px 0}
+ .pr-grid{grid-template-columns:1fr;gap:20px}
+ .pr-card{padding:24px 18px 20px}
+ .pr-area{grid-template-columns:1fr;gap:20px}
+}
