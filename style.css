@@ -1144,3 +1144,44 @@ html.modal-open{overflow:hidden}
 .ab3-name .ab3-name-res b{color:#fff}
 .ab3-name i{font-style:normal;font-weight:700;color:var(--g)}
 @media(prefers-reduced-motion:reduce){.ab3-ttl h2:before,.pg-h:before,.ab3:after,.cta2:after,.fill-word{transition:none}}
+/* ===== mobile finish pass ===== */
+@media(max-width:1000px){
+ body{font-size:16px;line-height:1.95}
+ .wrap{padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+ h2{font-size:26px}
+ .ab3-ttl h2,.pg-h{font-size:28px}
+ .ab3-en,.ab3-en.sm{font-size:52px;margin-bottom:-.24em}
+ .ab3-ttl:after{margin-top:14px}
+ .ab3,.sv3,.vc,.ar3,.ab-what,.ab-co,.vls,.vp-act,.sp-price,.pr-sec{padding-top:72px;padding-bottom:72px}
+ .sv3-head,.vc-head{margin-bottom:28px}
+ p,li,dd{word-break:normal;overflow-wrap:anywhere;line-break:strict}
+ /* fill chips */
+ .ab3-name{gap:5px;flex-wrap:nowrap}
+ .ab3-name span{padding:5px 10px;font-size:11px;gap:4px;white-space:nowrap}
+ .ab3-name b{font-size:15px}
+ .ab3-name i{font-size:13px}
+ /* CTA ring away from text */
+ .cta2:after{width:300px;height:300px;right:-170px;top:auto;bottom:-120px}
+ .ab3:after{width:300px;height:300px;right:-160px;top:-90px}
+ /* cards */
+ .sv4,.sv4.rev{padding:14px 14px 22px;border-radius:10px}
+ .sv4-txt{padding:14px 6px 0}
+ .sv4-no{font-size:24px;margin-bottom:8px}
+ .sv4-txt h3{font-size:22px;margin-bottom:10px}
+ .sv4-txt p:not(.sv4-no){margin-bottom:20px}
+ .sv4-btn{min-height:52px}
+ /* company table */
+ .ab-co table.co th,.ab-co table.co td{padding:14px 4px;font-size:15px}
+ .ab-co table.co th{width:30%}
+ /* voice toggles */
+ .vc-item summary{padding:16px 14px;gap:12px}
+ .vc-ic{width:32px;height:32px}
+ /* footer */
+ .ft2-nav a{padding:13px 0}
+ .ft2-bot{padding-right:60px}
+ /* hero card */
+ .fv4-card{padding:18px 18px 14px}
+ .fv4-card dl>div{grid-template-columns:5.6em 1fr;font-size:15px}
+ .fv4-tel{font-size:22px}
+}
+@media(max-width:374px){.ab3-name b{font-size:13px}.ab3-name span{padding:4px 8px}}
