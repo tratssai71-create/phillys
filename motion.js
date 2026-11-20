@@ -65,7 +65,7 @@
   });
 
   /* ---- hero intro ---- */
-  requestAnimationFrame(function () { setTimeout(function () { root.classList.add('mo-ready'); }, 60); });
+  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('mo-ready'); }); });
   /* replay the headline motion when the page is shown again (back/forward cache) */
   addEventListener('pageshow', function (e) {
     if (!e.persisted) return;
