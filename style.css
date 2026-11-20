@@ -2561,3 +2561,8 @@ html{scroll-behavior:auto!important}
 .mo .mf-h>span:nth-child(1){transition-delay:.854s!important}
 .mo .mf-h>span:nth-child(2){transition-delay:2.09s!important}
 .mo .mf-body>*{transition-delay:3.326s!important}
+/* accordion: no tap flash */
+.vc-item summary{-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.vc-item summary:focus:not(:focus-visible){outline:none}
+@media(hover:none){.vc-item summary:hover .vc-ic{background:none!important}.vc-item[open] summary:hover .vc-ic{background:var(--gd)!important}}
+.vc-item[open] .vc-ic{transition-delay:0s!important}
