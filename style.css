@@ -1317,3 +1317,29 @@ body,.gn a,.btn,.sv4-btn,.cf,.cta2-acts,.hd-cta,.mbar,table,dl{font-family:var(-
 /* sage: checks */
 .sp-list li:before,.svm-body li:before,.sv3-txt li:before,.check li:before{border-color:var(--sage)}
 .check li:before{background:var(--sage)}
+/* ===== palette v3: 3 families, golden-ratio base & ink =====
+   bg   : sand hue 39.5deg, sat x0.618, distance-to-white x0.382  -> #FBFAF9
+   sand : one φ step deeper                                       -> #F3EEE6
+   ink  : brand hue 209.5deg, sat x0.382, lightness x0.382        -> #1D252D
+   mute : ink + (1-ink)x0.382                                      -> #5B6876 */
+:root{--bg:#FBFAF9;--sand:#F3EEE6;--sand-d:#E6DECF;--ink:#1D252D;--mut:#5B6876;--ln:#E4DED3;--gl:#F3EEE6;--gold:#79643C;--gold-l:#8D7C5C}
+body{background:var(--bg);color:var(--ink)}
+.hd,.hd2,.fv4,.fv,.fv2,.ar2,.pg-hero,.sv3,.vls,.ab-co,.sp-price,.pr-sec:not(.pr-alt),.nt,.vp,.cf-sec,.cf-done{background:var(--bg)}
+@media(max-width:1000px){.hd2 .hd-in,.hd2 .gn,.hd2 .gn a{background:var(--bg)}.hd2 .gn a[aria-current]{background:var(--sand)}}
+.vc{background:linear-gradient(180deg,var(--bg) 0%,var(--sand) 100%)}
+.ab3{background:linear-gradient(160deg,var(--sand) 0%,#EDE6DA 100%)}
+.ab3:before{display:none}
+.ab3{--ring:rgba(121,100,60,.12)}
+.ab3-name span{background:rgba(255,255,255,.8)}
+.fv4-chip,.rc-tagline,.vc-av,.nt-doc-ic,.sp-jump a:hover{background:var(--sand);color:var(--gd)}
+.fv4-chip svg{color:var(--gd)}
+.sv4-no,.nt-no,.rc-bn,.vp-no{color:var(--gold-l)}
+.sv4-no:after{background:var(--gold-l)}
+.pg-hero-in .ab3-ttl .ab3-en{color:#E8E0D2}
+/* rose only on the 隙間 marker; sage removed */
+.vl-q:before,.vc-body:before{color:#B7A684}
+.cf-l em{background:#9B4A3A}
+.st-cite{color:var(--mut)}
+.sp-list li:before,.svm-body li:before,.sv3-txt li:before{border-color:var(--g)}
+.check li:before{background:var(--g)}
+.ab3-gal p,.vc-who,.pr-note,.nt-small,.am-fig figcaption{color:var(--mut)}
