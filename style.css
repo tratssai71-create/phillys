@@ -2651,3 +2651,24 @@ a[href^="tel:"],.nw{white-space:nowrap}
 .ld-on .ld{animation:ld-safety 0s linear 6s forwards}
 @keyframes ld-safety{to{opacity:0;visibility:hidden}}
 @media(prefers-reduced-motion:reduce){.ld{display:none!important}}
+/* ===== mobile: never wider than the screen ===== */
+html,body{max-width:100%;overflow-x:clip}
+@media(max-width:1000px){
+ main *,footer *,.cta2 *,.hd *{min-width:0}
+ .pg-h{white-space:normal!important;font-size:min(var(--t6),8.6vw)!important}
+ .og-eq{gap:var(--s1)!important}
+ .og-eq div{padding:var(--s2) 2px!important;min-width:0}
+ .og-eq b{font-size:min(var(--t4),5.6vw)!important}
+ .og-eq span{white-space:normal!important;font-size:min(var(--t1),3vw)!important;line-height:1.236!important}
+ .og-eq i{font-size:min(var(--t3),4.2vw)!important}
+ .ft2-catch{white-space:normal!important;letter-spacing:.06em!important}
+ .cta2-tel span{font-size:min(var(--t5),7.4vw)!important}
+ .cta2-acts a{padding:var(--s3)!important}
+ .vc-sum b,.rc-faq .vc-sum b{white-space:normal!important;overflow-wrap:anywhere}
+ .rc-hero-box{min-width:0;max-width:100%}
+ .rc-tagline{white-space:normal!important}
+ .ab3-ttl h2,.st-h,.sv3-head h2{overflow-wrap:anywhere}
+ img,svg,video{max-width:100%}
+}
+/* aspect-ratio + min-height was forcing a 388px-wide photo on narrow phones */
+@media(max-width:1000px){.pg-hero-ph,.rc-hero-ph,.fv4-photo,.mf-ph,.kv-ph,.photo{min-height:0!important;width:100%;max-width:100%!important}}
