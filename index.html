@@ -2,7 +2,7 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>訪問看護フィリーズ | 倉敷市の訪問看護・訪問リハビリ</title><meta name="description" content="倉敷市茶屋町の訪問看護フィリーズ。精神科訪問看護、難病(ALS等)、ターミナルケアの経験豊富な看護師とセラピストが、ご自宅での療養を訪問看護と訪問リハビリの両面でサポートします。">
 <meta property="og:title" content="訪問看護フィリーズ | 倉敷市の訪問看護・訪問リハビリ"><meta property="og:description" content="倉敷市茶屋町の訪問看護フィリーズ。精神科訪問看護、難病(ALS等)、ターミナルケアの経験豊富な看護師とセラピストが、ご自宅での療養を訪問看護と訪問リハビリの両面でサポートします。"><meta property="og:type" content="website">
-<link rel="icon" href="img/logo-mark.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"><link rel="stylesheet" href="style.css?v=20261120d"></head><body>
+<link rel="icon" href="img/logo-mark.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"><link rel="stylesheet" href="style.css?v=20261120e"><script>document.documentElement.classList.add("js-fill")</script></head><body>
 <header class="hd hd2"><div class="hd-in">
 <input type="checkbox" id="mn" class="mn-t">
 <a class="brand" href="index.html"><img src="img/logo.png" alt="フィリーズ株式会社 訪問看護フィリーズ" width="250" height="48"></a>
@@ -14,7 +14,7 @@
 <section class="fv4">
 <div class="fv4-head">
 <div class="fv4-hl"><p class="fv4-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>倉敷市茶屋町の訪問看護ステーション</p>
-<h1 class="fv4-h">人を担う。<br>心の隙間を、埋める。</h1></div>
+<h1 class="fv4-h">人を担う。<br>心の<span class="fill-word">隙間</span>を、埋める。</h1></div>
 <div class="fv4-hr"><p class="fv4-lead">住み慣れたご自宅で、安心して過ごせるように。看護師とセラピストのチームが、訪問看護と訪問リハビリの両面から支えます。</p>
 <a class="fv4-more" href="service.html">サービス内容を見る<span aria-hidden="true">→</span></a></div>
 </div>
@@ -35,6 +35,7 @@
 <div class="ab3-ttl"><p class="ab3-en">About</p><h2>私たちについて</h2></div>
 <div class="ab3-body">
 <h3>人を担い、心の隙間を埋めるチームです。</h3>
+<p class="ab3-name" aria-label="fill に s を足して Phillys"><span><b>fill</b>担う・埋める</span><i aria-hidden="true">+</i><span><b>s</b>スタッフ達</span><i aria-hidden="true">=</i><span class="ab3-name-res"><b>Phillys</b></span></p>
 <p>社名の Phillys は、fill(担う・隙間を埋める)を行動指針とするスタッフ達、という意味の造語です。精神科訪問看護や難病(ALS等)、ターミナルケアなど、数多くの経験を積んだ看護師とセラピストが、ご自宅での暮らしを支えます。</p>
 <a class="ab3-more" href="about.html">詳しく見る<span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
 </div>
@@ -155,4 +156,9 @@
   d.addEventListener('click',function(e){if(e.target===d) d.close();});
  });
 })();
+</script><script>
+(function(){var t=document.querySelectorAll('.ab3-ttl,.pg-hero-in,.ab3,.cta2,.fv4');
+if(!('IntersectionObserver' in window)){t.forEach(function(e){e.classList.add('is-in')});return;}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}})},{threshold:.35});
+t.forEach(function(e){io.observe(e)});})();
 </script></body></html>
