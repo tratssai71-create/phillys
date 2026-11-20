@@ -89,8 +89,24 @@
   /* ---- scroll: parallax, header hide/show, bottom bar ---- */
   var px = $$('.fv4-photo img');
   var hd = d.querySelector('.hd'), lastY = scrollY, ticking = false;
+  /* safety net: reveal anything that is in or above the viewport (fast flicks can skip observers) */
+  var pending = $$('.rv, .mf, .ab3-gal, .vp-gal').concat($$('.rv-ph'));
+  function sweep(vh) {
+    if (!pending.length) return;
+    pending = pending.filter(function (el) {
+      if (el.classList.contains('in')) return false;
+      var host = el.classList.contains('rv-ph') && !el.closest('.ab3-gal, .vp-gal') ? el.parentNode : el;
+      if (host.getBoundingClientRect().top < vh * 0.94) {
+        el.classList.add('in');
+        if (el.matches('.ab3-gal, .vp-gal')) $$('.rv, .rv-ph', el).forEach(function (c) { c.classList.add('in'); });
+        return false;
+      }
+      return true;
+    });
+  }
   function onScroll() {
     var y = scrollY, vh = innerHeight;
+    sweep(vh);
     px.forEach(function (img) {
       var r = img.parentNode.getBoundingClientRect();
       if (r.bottom < 0 || r.top > vh) return;

@@ -1874,3 +1874,72 @@ p{margin-bottom:var(--s3)}
  .ft2{padding-bottom:calc(var(--s7) + env(safe-area-inset-bottom,0px))}
 }
 @media(max-width:360px){.mb2-t{font-size:var(--t3)}.mb2-ic{width:32.9px;height:32.9px}}
+/* =================== REFINE: remove cheap cues =================== */
+/* 1. decorative rings & gradients off */
+.ab3:after,.cta2:after,.mf-panel:before,.fv:before{display:none!important}
+.cta2{background:#1B3F61}
+.ab3{background:var(--sand)}
+/* 2. section label mark: thin, small */
+.st-lbl:before,.ab3-ttl h2:before,.pg-h:before{width:12px!important;height:12px!important;background:none!important;-webkit-mask:none!important;mask:none!important;border:1.5px solid var(--g)!important;border-radius:50%;transform:translateY(-.1em)}
+.st-lbl{font-weight:500;letter-spacing:.14em;font-size:var(--t1)!important;color:var(--g)}
+.pg-hero-in .ab3-ttl:after{width:var(--s5);height:1px;background:var(--g)}
+/* 3. FV chip -> plain line label */
+.fv4-chip{background:none!important;padding:0!important;border-radius:0;color:var(--mut)!important;font-weight:500;letter-spacing:.08em;gap:var(--s2)!important}
+.fv4-chip svg{display:none}
+.fv4-chip:before{content:"";width:var(--s4);height:1px;background:var(--gold)}
+/* 4. name formula: typographic, no pills */
+.ab3-name2{display:flex;align-items:baseline;flex-wrap:wrap;gap:var(--s2) var(--s3);margin:0 0 var(--s4)!important;padding:var(--s3) 0;border-top:1px solid var(--sand-d);border-bottom:1px solid var(--sand-d);font-family:var(--f-en);font-size:var(--t5);color:var(--gd);line-height:1}
+.ab3-name2 span{display:inline-flex;align-items:baseline;gap:var(--s1)}
+.ab3-name2 small{font-family:var(--f-sans);font-size:var(--t1);color:var(--mut);letter-spacing:.04em}
+.ab3-name2 i{font-style:normal;color:var(--gold-l);font-size:var(--t4)}
+.ab3-name2 .nm{font-style:italic;font-weight:600}
+.ab3-name{display:none}
+/* 5. quiet text link instead of filled button */
+.tx-link{display:inline-flex;align-items:center;gap:var(--s2);padding:var(--s1) 0;border:0;border-bottom:1px solid currentColor;background:none;color:var(--gd);font:inherit;font-size:var(--t2);font-weight:500;letter-spacing:.1em;cursor:pointer}
+.tx-link svg{width:var(--t4);height:var(--t4);transition:transform .3s var(--ease-o)}
+.tx-link:hover svg{transform:translateX(4px)}
+.tx-link:focus-visible{outline:2px solid var(--g);outline-offset:4px}
+/* arrow link: thin circle instead of filled square */
+.ab3-more span{background:none!important;color:var(--gd)!important;border:1px solid var(--gd);border-radius:50%!important}
+.ab3-more:hover span{background:var(--gd)!important;color:#fff!important}
+.ab3-more{font-weight:500;letter-spacing:.1em;font-size:var(--t2)}
+/* 6. cards: quieter */
+.sv4{border-radius:var(--r1)}
+.sv4-ph{border-radius:2px}
+/* 7. voice: number instead of age bubble */
+.vc-no{flex:none;width:var(--c1);font-family:var(--f-en);font-size:var(--t5);color:var(--gold-l);line-height:1}
+.vc-item{box-shadow:none!important;border-color:var(--sand-d)}
+.vc-item[open]{border-color:var(--gold-l)}
+.vc-ic{border-color:var(--sand-d)}
+.vc-item[open] .vc-ic{background:var(--gd);border-color:var(--gd)}
+.vc-body{margin-left:calc(var(--s4) + var(--c1) + var(--s4))}
+/* 8. jump links: hairline list */
+.sp-jump{display:flex;flex-wrap:wrap;gap:0 var(--s4)!important}
+.sp-jump a{min-height:0!important;padding:var(--s2) 0!important;border:0!important;border-bottom:1px solid var(--sand-d)!important;border-radius:0!important;background:none!important;font-size:var(--t2)!important;color:var(--ink)}
+/* 9. price tags: outline text */
+.pr-tag,.pr-tag2{background:none!important;color:var(--gd)!important;border:1px solid var(--gd);border-radius:2px!important;font-weight:500}
+.pr-tag2{color:var(--mut)!important;border-color:var(--mut)}
+/* 10. soft shadows off, hairlines on */
+.fv4-card,.pr-card,.vp-card,.am-fig,.cf,.ar3-dl{box-shadow:none!important;border:1px solid var(--sand-d)!important}
+.ab3-ph,.vl-ph{box-shadow:none!important}
+/* 11. CTA buttons: thinner, no lift */
+.cta2-acts a:hover{transform:none;box-shadow:none}
+.cta2-tel{border-radius:2px!important}
+.cta2-form{border-radius:2px!important;border-width:1px!important}
+.cta2-en,.og-en{color:#C9B68E!important}
+/* 12. header (mobile): no heavy blue blocks */
+@media(max-width:1000px){
+ .hd-cta{background:none!important;color:var(--gd)!important;border-left:1px solid var(--ln)}
+ .hd-cta svg{fill:var(--gd)!important;width:var(--t4);height:var(--t4)}
+ .mn-b{background:none!important;border-left:1px solid var(--ln)}
+ .mn-b i,.mn-b i:before,.mn-b i:after{background:var(--gd)!important;height:1.5px}
+ .mn-t:checked~.mn-b i{background:transparent!important}
+ .sp-jump{flex-direction:column}
+ .sp-jump li{width:100%}
+ .sp-jump a{width:100%;justify-content:space-between}
+ .vc-body{margin-left:var(--s3)}
+ .vc-no{width:auto;font-size:var(--t4)}
+ .ab3-name2{font-size:var(--t4);gap:var(--s1) var(--s2)}
+}
+/* 13. desktop header phone: slimmer */
+@media(min-width:1001px){.hd-cta{border-radius:2px}}
