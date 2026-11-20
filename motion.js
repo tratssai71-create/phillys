@@ -7,13 +7,6 @@
 
   function $$(s, c) { return Array.prototype.slice.call((c || d).querySelectorAll(s)); }
 
-  /* ---- hero headline: split into rising lines ---- */
-  $$('.fv4-h, .rc-h').forEach(function (h) {
-    var parts = h.innerHTML.split(/<br\s*\/?>/i);
-    h.innerHTML = parts.map(function (p, i) {
-      return '<span class="mo-ln"><span style="transition-delay:' + (0.15 + i * 0.16).toFixed(2) + 's">' + p + '</span></span>';
-    }).join('');
-  });
 
   /* ---- vertical manifesto: char by char ---- */
   $$('.mf-h span').forEach(function (line, li) {
@@ -26,9 +19,7 @@
 
   /* ---- assign reveal targets ---- */
   var groups = [
-    '.st > *', '.ab3-ttl', '.sv3-intro', '.pg-lead', '.ab3-body > *', '.mf-body > *',
-    '.sv4', '.vc-item', '.vp-card', '.pr-card', '.pr-head', '.nt-item', '.sp-who li', '.rc-ben li',
-    '.vl-txt > *', '.ab3-gal li', '.vp-g', '.cta2-txt > *', '.og-txt > *', '.ab-what-body > *', '.rc-entry-in > *'
+    '.st', '.ab3-ttl', '.sv4', '.vl', '.vp-card', '.pr-card', '.nt-item', '.cta2-txt', '.og-txt'
   ];
   var seen = new Set();
   groups.forEach(function (sel) {
@@ -41,7 +32,7 @@
   var parents = new Map();
   seen.forEach(function (el) {
     var p = el.parentNode, n = parents.get(p) || 0;
-    el.style.setProperty('--rv-d', Math.min(n, 6) * 0.09 + 's');
+    el.style.setProperty('--rv-d', '0s');
     parents.set(p, n + 1);
   });
   // photos: curtain reveal (not the hero photos)
@@ -93,7 +84,7 @@
   });
 
   /* ---- scroll: parallax, header hide/show, bottom bar ---- */
-  var px = $$('.fv4-photo img');
+  var px = [];
   var hd = d.querySelector('.hd'), lastY = scrollY, ticking = false;
   /* safety net: reveal anything that is in or above the viewport (fast flicks can skip observers) */
   var pending = $$('.rv, .mf, .ab3-gal, .vp-gal').concat($$('.rv-ph'));
