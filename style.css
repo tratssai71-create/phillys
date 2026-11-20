@@ -2598,3 +2598,35 @@ html{scroll-behavior:auto!important}
 .bc a:hover{color:var(--gd)}
 .bc span[aria-hidden]{display:inline-block;width:var(--s3);height:1px;background:var(--gold-l);font-size:0;transform:none}
 .bc *{line-height:1!important}
+
+/* ===== typesetting: no 1–2 char widows, phrase-aware breaks ===== */
+main p,main li,main dd,main td,main th,main figcaption,main blockquote,footer p,footer dd,.cta2 p{text-wrap:pretty;word-break:auto-phrase;line-break:strict;hanging-punctuation:allow-end}
+main h1,main h2,main h3,.cta2 h2,.st-h,.vc-sum b,.vp-card h3{text-wrap:balance;word-break:auto-phrase;line-break:strict}
+.kv-h span,.mf-h span{text-wrap:nowrap}
+a[href^="tel:"],.nw{white-space:nowrap}
+
+.cf-l em{padding:3px!important;line-height:1!important}
+
+/* ===== QA fixes (narrow phones) ===== */
+/* jump links: keep chevron inside */
+.sp-jump li{min-width:0}
+.sp-jump a{width:100%;box-sizing:border-box;gap:var(--s2)!important;padding-right:2px!important}
+.sp-jump a:after{flex:none;margin-right:2px}
+/* recruit hero: headline fits, button on one line */
+.rc-h span{display:block}
+@media(max-width:1000px){
+ .rc-h{font-size:min(var(--t5),calc((100vw - 84px)/9.4))!important;white-space:nowrap}
+ .rc-hero-btns .sv4-btn{width:100%;white-space:nowrap;padding:0 var(--s3)!important;justify-content:center}
+ .rc-tagline{font-size:var(--t1)!important;line-height:1.382!important}
+}
+/* manifesto: stack on phones (headline first, text full width) */
+@media(max-width:1000px){
+ .mf-panel{flex-direction:column!important;align-items:stretch!important;gap:var(--s5)!important}
+ .mf-h{align-self:flex-end;margin-right:var(--s2)}
+ .mf-body{max-width:none!important;padding-top:0!important}
+}
+/* service points: one column on very narrow phones */
+@media(max-width:374px){.sv5-pts{grid-template-columns:1fr!important}}
+/* partner orgs: one column on narrow phones */
+@media(max-width:420px){.nt-orgs{grid-template-columns:1fr!important}}
+@media(max-width:600px){.nt-docs li{display:grid!important;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:var(--s3);row-gap:var(--s1);align-items:start}.nt-doc-ic{grid-row:1/3}.nt-doc-s{justify-self:start}}
