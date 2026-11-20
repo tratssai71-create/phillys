@@ -415,11 +415,3 @@ h1,h2,h3,.fv4-h{font-weight:700}
 }
 @media(max-width:480px){.ph2-term{min-width:0;padding:10px 4px}.ph2-term b{font-size:20px}.ph2-term span{font-size:10px}.ph2-op{font-size:16px}.ph2-eq{gap:6px;flex-wrap:nowrap}}
 .ph2-term span{white-space:nowrap}
-/* ===== tighter letter-spacing ===== */
-body{letter-spacing:.02em}
-h1,h2,h3,.fv4-h,.fv-h{letter-spacing:.02em}
-.fv4-h{letter-spacing:.03em}
-.eyebrow{letter-spacing:.06em}
-.ph2-vals b{letter-spacing:.03em}
-.fv4-chip,.fv3-place,.fv2-place,.fv-place{letter-spacing:.02em}
-.hd-cta span,.fv4-tel,.ph2-term b{letter-spacing:.01em}
