@@ -212,3 +212,15 @@ h1,h2,h3{text-wrap:balance;word-break:keep-all;overflow-wrap:anywhere}
  .fv-tel span{font-size:24px}
  .fv-main{border-radius:18px 18px 18px 72px}
 }
+/* ===== white background ===== */
+:root{--cream:#fff}
+.fv{background:#fff}
+.fv:before{display:none}
+.ph-head{background:#fff;border-bottom:1px solid var(--ln)}
+.alt{background:#fff;border-top:1px solid var(--ln)}
+.box{border:1px solid var(--ln)}
+blockquote{border:1px solid var(--ln)}
+.strip{background:#fff;color:var(--ink);border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.strip b{color:var(--gd)}
+.strip li+li{border-left:1px solid var(--ln)}
+@media(max-width:900px){.strip li+li{border-left:0}}
