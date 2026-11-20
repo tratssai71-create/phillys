@@ -1251,3 +1251,35 @@ body,.gn a,.btn,.sv4-btn,.cf,.cta2-acts,.hd-cta,.mbar,table,dl{font-family:var(-
  .mf-panel:before{width:220px;height:220px;right:-90px;bottom:-90px}
  .fv4-chip{flex-wrap:wrap}
 }
+/* ===== heading system: B (quiet, default for sections) ===== */
+.ab3-ttl .ab3-en,.ab3-ttl .ab3-en.sm{position:static;display:flex;align-items:center;gap:12px;margin:0 0 10px;font-size:19px;line-height:1.2;color:var(--g);letter-spacing:.08em;white-space:nowrap}
+.ab3-ttl .ab3-en:before{content:"";width:28px;height:1px;background:var(--g)}
+.ab3 .ab3-ttl .ab3-en,.ab-what .ab3-ttl .ab3-en{color:var(--g)}
+.ab3-ttl:after{display:none}
+.ab3-ttl h2{font-size:clamp(26px,2.6vw,34px)}
+/* C: page hero keeps the large watermark */
+.pg-hero-in .ab3-ttl .ab3-en{display:block;margin:0 0 -.22em;font-size:clamp(60px,7vw,100px);line-height:.9;color:#e3edf7;letter-spacing:.02em}
+.pg-hero-in .ab3-ttl .ab3-en:before{display:none}
+.pg-hero-in .ab3-ttl:after{display:block}
+/* ===== heading system: A (statement) ===== */
+.st{min-width:0}
+.st-lbl{display:flex;align-items:center;gap:10px;margin:0 0 18px;font-size:15px;font-weight:700;color:var(--g);letter-spacing:.08em}
+.st-lbl:before{content:"";width:18px;height:18px;flex:none;border-radius:50%;background:conic-gradient(from 210deg,var(--g) var(--fill),transparent 0);-webkit-mask:radial-gradient(circle,transparent 5px,#000 6px);mask:radial-gradient(circle,transparent 5px,#000 6px);--fill:100%;transition:--fill 1.1s cubic-bezier(.4,0,.2,1) .15s}
+.js-fill .st:not(.is-in) .st-lbl:before{--fill:72%}
+.st-h{margin:0;font-family:var(--f-serif);font-weight:600;font-size:clamp(28px,3vw,40px);line-height:1.6;letter-spacing:.08em;color:var(--gd)}
+.st-q{font-size:clamp(24px,2.5vw,32px);line-height:1.75}
+.st-cite{margin:14px 0 0;font-size:14px;color:var(--mut)}
+.ab3-top{align-items:start}
+.ab3 .ab3-body{padding-top:6px}
+.ab3 .ab3-name{margin-top:0!important}
+.vc-head{align-items:end}
+.ar3-txt .ar3-lead{margin:20px 0 24px}
+@media(max-width:1000px){
+ .ab3-ttl .ab3-en,.ab3-ttl .ab3-en.sm{font-size:17px;margin-bottom:8px}
+ .ab3-ttl h2{font-size:25px}
+ .pg-hero-in .ab3-ttl .ab3-en{font-size:56px}
+ .st-lbl{font-size:14px;margin-bottom:14px}
+ .st-h{font-size:26px}
+ .st-q{font-size:22px}
+}
+@media(max-width:600px){.sp-jump{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sp-jump a{width:100%;justify-content:space-between;padding:11px 12px;font-size:13px}}
