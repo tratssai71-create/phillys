@@ -1849,3 +1849,28 @@ p{margin-bottom:var(--s3)}
 .mo.mbar-on .mbar-tel{animation:tel-pulse 2.4s var(--ease) 1s 2}
 @media(prefers-reduced-motion:reduce){.hd{transition:none}}
 @media(max-width:1000px){.mbar a{white-space:nowrap}.mbar-form{font-size:var(--t2)!important;gap:var(--s1)!important}.mbar-form svg{width:var(--t3)!important;height:var(--t3)!important}}
+/* ===== calmer motion ===== */
+.hd.hd-up{transform:none}
+.mo .rv-ph img{transform:scale(1.06);transition:transform 1.4s var(--ease-o)}
+.mo .pg-hero-ph img,.mo .rc-hero-ph img,.mo .mf-photo img{transform:none}
+.mo .rv{transform:translate3d(0,16px,0)}
+.mbar{display:none!important}
+/* ===== bottom capsule ===== */
+.mbar2{display:none}
+@media(max-width:1000px){
+ .mbar2{display:flex;position:fixed;z-index:30;left:max(var(--s2),env(safe-area-inset-left,0px));right:max(var(--s2),env(safe-area-inset-right,0px));bottom:calc(var(--s2) + env(safe-area-inset-bottom,0px));height:var(--c2);border-radius:999px;background:rgba(31,79,122,.96);box-shadow:0 10px 26px rgba(18,34,54,.28);overflow:hidden;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+ .mo .mbar2{transform:translate3d(0,calc(100% + 24px),0);transition:transform .6s var(--ease-o)}
+ .mo.mbar-on .mbar2{transform:none}
+ .mbar2 a{display:flex;align-items:center;color:#fff;text-decoration:none;transition:background .2s}
+ .mbar2 a:active{background:rgba(255,255,255,.08)}
+ .mb2-tel{flex:1.618;gap:var(--s2);padding:0 var(--s3) 0 var(--s1)}
+ .mb2-ic{display:grid;place-items:center;width:var(--c1);height:var(--c1);border-radius:50%;background:#fff;flex:none}
+ .mb2-ic svg{width:var(--t4);height:var(--t4);fill:var(--gd)}
+ .mb2-t{display:flex;flex-direction:column;line-height:1.2;font-size:var(--t4);font-weight:700;letter-spacing:.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+ .mb2-t small{font-size:var(--t1);font-weight:500;letter-spacing:.06em;opacity:.85}
+ .mb2-form{flex:1;justify-content:center;gap:var(--s1);border-left:1px solid rgba(255,255,255,.22);font-size:var(--t2);font-weight:700;letter-spacing:.08em;white-space:nowrap}
+ .mb2-form svg{width:var(--t3);height:var(--t3);fill:#fff}
+ .mbar2 a:focus-visible{outline:2px solid #fff;outline-offset:-4px;border-radius:999px}
+ .ft2{padding-bottom:calc(var(--s7) + env(safe-area-inset-bottom,0px))}
+}
+@media(max-width:360px){.mb2-t{font-size:var(--t3)}.mb2-ic{width:32.9px;height:32.9px}}

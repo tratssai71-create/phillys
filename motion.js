@@ -28,9 +28,7 @@
   var groups = [
     '.st > *', '.ab3-ttl', '.sv3-intro', '.pg-lead', '.ab3-body > *', '.mf-body > *',
     '.sv4', '.vc-item', '.vp-card', '.pr-card', '.pr-head', '.nt-item', '.sp-who li', '.rc-ben li',
-    '.vl-txt > *', '.ar3-txt > *:not(.st)', '.ar3-dl > div', '.ab3-gal li', '.vp-g', '.ft2-top > *',
-    '.cta2-txt > *', '.cta2-acts > *', '.og-txt > *', '.og-eq > *', '.sp-jump li', '.cf-side > *', '.cf-row',
-    '.rc-stats li', '.ab-co tr', '.sp-price-body dl > div', '.pr-tbl tr', '.ab-what-body > *', '.rc-entry-in > *'
+    '.vl-txt > *', '.ab3-gal li', '.vp-g', '.cta2-txt > *', '.og-txt > *', '.ab-what-body > *', '.rc-entry-in > *'
   ];
   var seen = new Set();
   groups.forEach(function (sel) {
@@ -88,19 +86,8 @@
     }, { threshold: 0.5 }).observe(stats);
   });
 
-  /* ---- swipe hint for galleries (mobile) ---- */
-  $$('.ab3-gal').forEach(function (g) {
-    new IntersectionObserver(function (es, o) {
-      if (!es[0].isIntersecting || g.scrollWidth <= g.clientWidth + 4) return; o.disconnect();
-      setTimeout(function () {
-        g.scrollTo({ left: 72, behavior: 'smooth' });
-        setTimeout(function () { g.scrollTo({ left: 0, behavior: 'smooth' }); }, 700);
-      }, 900);
-    }, { threshold: 0.6 }).observe(g);
-  });
-
   /* ---- scroll: parallax, header hide/show, bottom bar ---- */
-  var px = $$('.fv4-photo img, .pg-hero-ph img, .rc-hero-ph img, .mf-photo img');
+  var px = $$('.fv4-photo img');
   var hd = d.querySelector('.hd'), lastY = scrollY, ticking = false;
   function onScroll() {
     var y = scrollY, vh = innerHeight;
@@ -108,12 +95,8 @@
       var r = img.parentNode.getBoundingClientRect();
       if (r.bottom < 0 || r.top > vh) return;
       var p = (r.top + r.height / 2 - vh / 2) / vh;
-      img.style.transform = 'translate3d(0,' + (p * -7).toFixed(2) + '%,0) scale(1.14)';
+      img.style.transform = 'translate3d(0,' + (p * -4).toFixed(2) + '%,0) scale(1.08)';
     });
-    if (hd && innerWidth <= 1000 && !d.getElementById('mn').checked) {
-      if (y > 240 && y > lastY + 4) hd.classList.add('hd-up');
-      else if (y < lastY - 4 || y < 240) hd.classList.remove('hd-up');
-    }
     root.classList.toggle('mbar-on', y > 280);
     lastY = y; ticking = false;
   }
