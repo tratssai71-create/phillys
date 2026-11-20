@@ -720,3 +720,37 @@ html.modal-open{overflow:hidden}
 .am-key i{display:inline-block;width:14px;height:14px;border-radius:3px;background:#bcd3ea}
 @media(max-width:1000px){.ar3-vis{margin:0}.am-fig{padding:12px 10px 10px}}
 .am-t{font-size:20px}.am-s{font-size:15px}.am{border-radius:6px}.am-fig{overflow:hidden}
+
+/* ===== sub page: about ===== */
+.pg-hero{padding:40px 0 0}
+.bc{font-size:13px;color:var(--mut);display:flex;gap:10px;margin-bottom:40px}
+.bc a{color:var(--mut)}
+.pg-hero-in{display:grid;grid-template-columns:minmax(300px,1fr) minmax(0,2fr);gap:56px;align-items:end;margin-bottom:48px}
+.pg-h{margin:0;font-size:clamp(32px,3.6vw,46px);color:var(--gd);display:flex;align-items:center;gap:14px}
+.pg-h:before{content:"";flex:none;width:14px;height:14px;border-radius:50%;border:3px solid var(--g);background:#fff}
+.pg-lead{margin:0;line-height:2;padding:18px 0 4px 28px;border-left:1px solid var(--ln)}
+.pg-hero-ph{aspect-ratio:auto;height:min(42vw,520px);min-height:240px;border-radius:0;max-width:none}
+.pg-hero-ph img{object-position:50% 45%}
+.ab-ph .ab3-body h3{font-size:clamp(22px,2.4vw,30px)}
+.ab-what{padding:104px 0;background:#f5f8fc}
+.ab-what-in,.ab-co-in{display:grid;grid-template-columns:minmax(300px,1fr) minmax(0,2fr);gap:56px;align-items:start}
+.ab-what-body p{margin:0 0 16px;line-height:2.1}
+.ab-what .ab3-en{color:#fff}
+.ab-co{padding:104px 0}
+.ab-co table.co{margin:0;border-top:1px solid var(--ink)}
+.ab-co table.co th,.ab-co table.co td{border:0;border-bottom:1px solid var(--ln);background:none;padding:18px 8px;font-size:16px}
+.ab-co table.co th{width:30%;font-weight:700;color:var(--ink)}
+@media(max-width:1000px){
+ .pg-hero-in,.ab-what-in,.ab-co-in{grid-template-columns:1fr;gap:20px}
+ .pg-lead{padding:0;border-left:0}
+ .pg-hero-ph{height:60vw}
+ .ab-what,.ab-co{padding:64px 0}
+ .ab-co table.co th{width:34%}
+}
+.ab-what-in>*,.ab-co-in>*,.pg-hero-in>*{min-width:0}@media(max-width:600px){.ab3-en{font-size:clamp(40px,13vw,56px)}}
+.ab3-en.sm{font-size:clamp(48px,5vw,76px)}
+.pg-h{white-space:nowrap}
+@media(min-width:1001px){.pg-hero-in,.ab-what-in,.ab-co-in,.ab-ph .ab3-top,.sv3-head{grid-template-columns:minmax(360px,1fr) minmax(0,1.8fr)}}
+.ab3-ttl{overflow:visible}
+.ab3-body,.sv3-intro,.ab-what-body,.pg-lead,.ab-co table{position:relative;z-index:1}
+@media(max-width:600px){.ab3-en.sm{font-size:clamp(36px,11vw,48px)}}
