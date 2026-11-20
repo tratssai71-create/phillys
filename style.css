@@ -2707,3 +2707,15 @@ html,body{max-width:100%;overflow-x:clip}
 }
 @media(max-width:360px){.mbar3 a.m3-form{font-size:var(--t1)!important;letter-spacing:.06em!important;padding-left:var(--s2)!important;padding-right:var(--s2)!important}.m3-tel span{letter-spacing:.06em!important}}
 @media(max-width:1000px){.mbar3 a.m3-form svg{flex:none;width:var(--t2)!important;height:var(--t2)!important}.mbar3 a.m3-form span{white-space:nowrap}}
+/* ===== mobile manifesto v2: two columns — vertical title right, text left ===== */
+@media(max-width:1000px){
+ .mf-panel{flex-direction:row-reverse!important;align-items:flex-start!important;justify-content:space-between!important;gap:var(--s4)!important;padding:var(--s6) var(--s4)!important}
+ .mf-h{align-self:flex-start;flex:none;font-size:min(var(--t5),7.4vw)!important;letter-spacing:.16em;padding-left:var(--s4);border-left:1px solid rgba(255,255,255,.18)}
+ .mf-h span+span{margin-top:var(--s5)!important}
+ .mf-body{flex:1 1 auto;min-width:0;width:auto;max-width:none!important;margin:0;padding-top:var(--s1)!important;border-top:0}
+ .mf-body p{font-size:min(var(--t2),4vw)!important;text-wrap:pretty}
+ .mf-body p.mf-lead{font-size:min(var(--t3),4.3vw)!important;letter-spacing:.02em!important}
+ .mf-sign{font-size:min(var(--t3),4.3vw)!important}
+ .mf-sign span{font-size:min(var(--t1),3.4vw)!important}
+}
+@media(max-width:1000px){.mf-panel{gap:var(--s3)!important}.mf-h{padding-left:var(--s3)}}@media(max-width:360px){.mf-panel{padding-left:var(--s3)!important;padding-right:var(--s3)!important}.mf-h{letter-spacing:.12em}}
