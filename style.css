@@ -664,3 +664,39 @@ html.modal-open{overflow:hidden}
 .ar2-map iframe{display:block;width:100%;aspect-ratio:4/3.2;border:0;border-radius:6px;background:#eef2f6}
 .ar2-gm{display:inline-block;margin-top:10px;font-size:14px;color:var(--g)}
 @media(max-width:1000px){.ar2{padding:64px 0}.ar2-in{grid-template-columns:1fr;gap:28px}}
+
+/* ===== area v3 ===== */
+.ar3{padding:112px 0;background:#f5f8fc}
+.ar3-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px;align-items:center}
+.ar3-vis{position:relative;min-width:0}
+.ar3-vis:before{content:"";position:absolute;left:-24px;bottom:-24px;width:60%;height:60%;background:#dfe9f4;border-radius:12px;z-index:0}
+.ar3-ph{position:relative;z-index:1;aspect-ratio:4/4.4;border-radius:12px}
+.ar3-ph img{object-position:30% 45%}
+.ar3-txt{min-width:0}
+.ar3-lead{margin:28px 0 28px;font-size:17px;line-height:1.9}
+.ar3-dl{margin:0 0 28px;background:#fff;border-radius:10px;padding:4px 28px}
+.ar3-dl>div{display:grid;grid-template-columns:7.5em 1fr;gap:16px;align-items:center;padding:20px 0}
+.ar3-dl>div+div{border-top:1px solid var(--ln)}
+.ar3-dl dt{font-weight:700;color:var(--ink)}
+.ar3-dl dd{margin:0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:17px}
+.ar3-dl dd b{font-size:20px;color:var(--gd)}
+.ar3-dl dd span{position:relative;color:var(--gd);font-weight:700}
+.ar3-office p{margin:0;line-height:1.9}
+.ar3-office-h{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--gd)}
+.ar3-office-h svg{width:18px;height:18px;fill:var(--g)}
+.ar3-btns{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin-top:16px}
+.ar3-btn{display:inline-flex;align-items:center;padding:11px 22px;border:1px solid var(--g);border-radius:4px;color:var(--g);font-weight:700;text-decoration:none;background:#fff;transition:background .2s,color .2s}
+.ar3-btn:hover{background:var(--g);color:#fff}
+.ar3-btn:focus-visible,.ar3-tel:focus-visible{outline:3px solid var(--g);outline-offset:3px}
+.ar3-tel{font-weight:700;color:var(--ink);text-decoration:none;font-size:18px}
+.ar3-note{margin:20px 0 0;font-size:14px;color:var(--mut)}
+.pc-only{display:inline}
+@media(max-width:1000px){
+ .ar3{padding:64px 0}
+ .ar3-in{grid-template-columns:1fr;gap:48px}
+ .ar3-vis{margin:0 8px 0 24px}
+ .ar3-ph{aspect-ratio:4/3}
+ .ar3-dl{padding:4px 18px}
+ .ar3-dl>div{grid-template-columns:1fr;gap:6px;padding:16px 0}
+ .pc-only{display:none}
+}
