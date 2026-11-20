@@ -500,3 +500,8 @@ h1,h2,h3,.fv4-h{font-weight:700}
 .sv3-intro{padding:18px 0 4px 28px;border-left:1px solid var(--ln)}
 @media(max-width:1000px){.ab3-en{font-size:64px}.sv3-intro{padding:0;border-left:0}}
 .ab3 .ab3-en{color:#fff}
+/* ===== FV photo full width ===== */
+.fv4-visual{max-width:none;padding:0 0 72px}
+.fv4-photo{border-radius:0;height:min(52vw,680px)}
+.fv4-card{right:max(24px,calc((100vw - 1200px)/2 + 24px));bottom:104px}
+@media(max-width:1000px){.fv4-visual{padding:0 0 48px}.fv4-photo{border-radius:0;height:66vw}.fv4-card{margin:-40px 16px 0}}
