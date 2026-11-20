@@ -1943,3 +1943,26 @@ p{margin-bottom:var(--s3)}
 }
 /* 13. desktop header phone: slimmer */
 @media(min-width:1001px){.hd-cta{border-radius:2px}}
+/* ===== bottom bar v3: ivory, hairlines, φ split =====
+   height 53 (16φ^2.5) / split 61.8 : 38.2 / label 12.6 / number 20.4 / link 14.2 / icon 16 */
+.mbar2{display:none!important}
+.mbar3{display:none}
+@media(max-width:1000px){
+ .mbar3{display:grid;grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);position:fixed;left:0;right:0;bottom:0;z-index:30;
+  padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);
+  background:rgba(251,250,249,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--sand-d)}
+ .mo .mbar3{transform:translate3d(0,100%,0);transition:transform .6s var(--ease-o)}
+ .mo.mbar-on .mbar3{transform:none}
+ .mbar3 a{display:flex;align-items:center;height:var(--c2);text-decoration:none;color:var(--gd);transition:background .2s}
+ .mbar3 a:active{background:var(--sand)}
+ .mbar3 a:focus-visible{outline:2px solid var(--g);outline-offset:-3px}
+ .m3-tel{gap:var(--s2);padding:0 var(--s3) 0 var(--s4)}
+ .m3-tel svg{width:var(--t3);height:var(--t3);flex:none;color:var(--gold)}
+ .m3-tel span{display:flex;flex-direction:column;line-height:1.236;font-size:var(--t4);font-weight:500;letter-spacing:.04em;font-variant-numeric:tabular-nums;white-space:nowrap}
+ .m3-tel small{font-size:var(--t1);font-weight:400;letter-spacing:.1em;color:var(--mut)}
+ .m3-form{justify-content:center;gap:var(--s1);margin:var(--s2) 0;height:calc(var(--c2) - 2*var(--s2))!important;border-left:1px solid var(--sand-d);font-size:var(--t2);font-weight:500;letter-spacing:.1em;white-space:nowrap}
+ .m3-form svg{width:var(--t3);height:var(--t3);transition:transform .3s var(--ease-o)}
+ .m3-form:active svg{transform:translateX(3px)}
+ .ft2{padding-bottom:calc(var(--s6) + var(--c2) + env(safe-area-inset-bottom,0px))!important}
+}
+@media(max-width:360px){.m3-tel{padding-left:var(--s3)}.m3-tel span{font-size:var(--t3)}.m3-form{font-size:var(--t1)}}
