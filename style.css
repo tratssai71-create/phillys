@@ -488,3 +488,15 @@ h1,h2,h3,.fv4-h{font-weight:700}
  .sv3-box .sv3-ph,.sv3-box.rev .sv3-ph{order:-1;min-height:0;height:auto;aspect-ratio:16/10}
  .sv3-txt{padding:28px 22px 30px}
 }
+/* ===== richer section titles ===== */
+.ab3-ttl{position:relative;border-left:0;padding:0}
+.ab3-en{position:relative;margin:0 0 -.42em;font-size:clamp(60px,7.4vw,108px);font-weight:700;line-height:1;letter-spacing:.01em;color:#e3edf7;white-space:nowrap;font-family:"Noto Sans JP",sans-serif}
+.ab3 .ab3-en{color:rgba(255,255,255,.85)}
+.ab3-ttl h2{position:relative;display:flex;align-items:center;gap:14px;padding-left:4px}
+.ab3-ttl h2:before{content:"";flex:none;width:14px;height:14px;border-radius:50%;border:3px solid var(--g);background:#fff}
+.ab3-ttl:after{content:"";display:block;width:56px;height:3px;margin:18px 0 0 4px;background:linear-gradient(90deg,var(--g) 60%,#9fbfdf 60%)}
+.sv3-head,.ab3-top{align-items:end}
+.sv3-intro,.ab3-body{position:relative}
+.sv3-intro{padding:18px 0 4px 28px;border-left:1px solid var(--ln)}
+@media(max-width:1000px){.ab3-en{font-size:64px}.sv3-intro{padding:0;border-left:0}}
+.ab3 .ab3-en{color:#fff}
