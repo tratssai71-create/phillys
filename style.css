@@ -2723,3 +2723,5 @@ main,footer,.cta2{overflow-x:clip}
 @media(max-width:1000px){.mf-panel{gap:var(--s3)!important}.mf-h{padding-left:var(--s3)}}@media(max-width:360px){.mf-panel{padding-left:var(--s3)!important;padding-right:var(--s3)!important}.mf-h{letter-spacing:.12em}}
 /* bottom bar: pin to the viewport bottom explicitly (iOS Safari) */
 @media(max-width:1000px){.mbar3{top:auto!important;bottom:0!important;left:0!important;right:0!important;-webkit-transform:translateZ(0);transform:translateZ(0)}}
+@media(max-width:1000px){.mbar3 a.m3-form{background:var(--g)}.mbar3 a.m3-form:active{background:var(--gd)}}
+@media(max-width:1000px){.m3-tel span{color:var(--g)!important}}
