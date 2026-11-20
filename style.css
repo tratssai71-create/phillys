@@ -647,3 +647,20 @@ html.modal-open{overflow:hidden}
 .ar-fig figcaption{margin-top:8px;font-size:12px;color:var(--mut);text-align:right}
 @media(max-width:1000px){.ar{padding:64px 0}.ar-in{grid-template-columns:1fr;gap:32px}.ar-fig{order:0}}
 .nw{white-space:nowrap}.ar-fig{max-width:560px;justify-self:center;width:100%}
+
+/* ===== area v2 (plain) ===== */
+.ar2{padding:104px 0;background:#fff;border-top:1px solid var(--ln)}
+.ar2-in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.ar2-lead{margin:28px 0 24px}
+.ar2-tbl{width:100%;border-collapse:collapse;margin:0 0 24px;background:none}
+.ar2-tbl th,.ar2-tbl td{border:0;border-bottom:1px solid var(--ln);padding:16px 4px;text-align:left;background:none}
+.ar2-tbl tr:first-child th,.ar2-tbl tr:first-child td{border-top:1px solid var(--ink)}
+.ar2-tbl th{width:38%;font-weight:700;color:var(--ink)}
+.ar2-tbl td{font-weight:400}
+.ar2-addr{margin:0;font-size:15px;line-height:1.9}
+.ar2-addr>span:first-child{display:inline-block;margin-right:12px;font-weight:700}
+.ar2-note{margin:8px 0 0;font-size:14px;color:var(--mut)}
+.ar2-map{position:relative;min-width:0}
+.ar2-map iframe{display:block;width:100%;aspect-ratio:4/3.2;border:0;border-radius:6px;background:#eef2f6}
+.ar2-gm{display:inline-block;margin-top:10px;font-size:14px;color:var(--g)}
+@media(max-width:1000px){.ar2{padding:64px 0}.ar2-in{grid-template-columns:1fr;gap:28px}}
