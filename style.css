@@ -247,3 +247,19 @@ blockquote{border:1px solid var(--ln)}
 }
 .fv2-photo img{object-position:50% 30%}
 @media(max-width:700px){.fv2-photo img{object-position:78% 30%}}
+/* ===== header hover v2 ===== */
+.gn a{position:relative;transition:color .2s}
+.gn a:hover,.gn a[aria-current]{background:none}
+.gn a:after{content:"";position:absolute;left:16px;right:16px;bottom:18px;height:2px;background:var(--g);transform:scaleX(0);transition:transform .25s ease}
+.gn a:hover:after,.gn a[aria-current]:after{transform:scaleX(1)}
+.gn a:hover,.gn a:hover .en{color:var(--g)}
+.act{transition:background .2s,color .2s}
+.act svg{transition:transform .2s}
+.act:hover{background:#f6f9fc;color:var(--g)}
+.act:hover svg{transform:translateY(-2px)}
+@media(max-width:1180px){.gn a:after{left:10px;right:10px}}
+@media(max-width:1000px){
+ .gn a:after{display:none}
+ .gn a:hover,.gn a[aria-current]{background:var(--gl)}
+}
+@media(prefers-reduced-motion:reduce){.gn a:after,.act svg{transition:none}}
