@@ -287,3 +287,17 @@ blockquote{border:1px solid var(--ln)}
  .fv3-contact{padding:24px 20px 26px}
 }
 @media(max-width:700px){.fv3-photo img{object-position:78% 30%}}
+
+/* ===== FV v5: photo as background, box on top ===== */
+.fv2{min-height:min(82vh,760px);display:flex;align-items:flex-end;overflow:hidden}
+.fv2-photo{position:absolute;inset:0;height:auto;min-height:0}
+.fv2-photo img{object-position:65% 30%}
+.fv2-body{position:relative;width:100%;margin:0 auto;padding:48px 24px 56px}
+.fv2-box{box-shadow:0 18px 40px rgba(20,40,70,.16)}
+@media(max-width:1000px){
+ .fv2{display:block;min-height:0}
+ .fv2-photo{position:relative;inset:auto;height:56vh;min-height:300px}
+ .fv2-body{margin-top:-80px;padding:0 16px 48px}
+}
+@media(max-width:520px){.fv2-photo{height:46vh;min-height:260px}.fv2-body{margin-top:-48px}}
+@media(max-width:700px){.fv2-photo img{object-position:78% 30%}}
