@@ -26,10 +26,7 @@
 <div class="cf-who"><p class="cf-who-h">どなたからでも</p><p>ご本人・ご家族・ケアマネジャー・医療機関の方、どなたからのご相談もお受けしています。</p></div>
 </aside>
 
-<form class="cf" id="cf" action="https://formsubmit.co/ajax/phillys@outlook.jp" method="POST" novalidate>
-<input type="hidden" name="_subject" value="【ホームページ】お問い合わせがありました">
-<input type="hidden" name="_template" value="table">
-<input type="text" name="_honey" class="cf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<form class="cf" id="cf" action="#" method="post" novalidate>
 <div class="cf-row"><p class="cf-l" id="l-type">お問い合わせの種類<em>必須</em></p>
 <div class="cf-chips" role="radiogroup" aria-labelledby="l-type"><label class="cf-chip"><input type="radio" name="お問い合わせの種類" value="訪問看護のご相談" required><span>訪問看護のご相談</span></label><label class="cf-chip"><input type="radio" name="お問い合わせの種類" value="訪問リハビリのご相談"><span>訪問リハビリのご相談</span></label><label class="cf-chip"><input type="radio" name="お問い合わせの種類" value="料金について"><span>料金について</span></label><label class="cf-chip"><input type="radio" name="お問い合わせの種類" value="見学・求人への応募"><span>見学・求人への応募</span></label><label class="cf-chip"><input type="radio" name="お問い合わせの種類" value="その他"><span>その他</span></label></div></div>
 <div class="cf-row"><p class="cf-l" id="l-who">ご相談される方<em>必須</em></p>
@@ -63,9 +60,6 @@ f.addEventListener('submit',function(e){e.preventDefault();err.hidden=true;
  var m=document.getElementById('f-mail');if(m.value&&!m.checkValidity())miss.push('メールアドレスの形式');
  if(!document.getElementById('f-agree').checked)miss.push('個人情報の取り扱いへの同意');
  if(miss.length){err.textContent='次の項目をご確認ください:'+miss.join('、');err.hidden=false;err.scrollIntoView({block:'center',behavior:'smooth'});return;}
- btn.disabled=true;btn.textContent='送信しています…';
- fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(){
-  document.querySelector('.cf-sec').hidden=true;var d=document.getElementById('cf-done');d.hidden=false;d.scrollIntoView({block:'start'});
- }).catch(function(){err.textContent='送信できませんでした。時間をおいて再度お試しいただくか、お電話(086-454-9300)でご連絡ください。';err.hidden=false;btn.disabled=false;btn.textContent='送信する';});
+ document.querySelector('.cf-sec').hidden=true;var d=document.getElementById('cf-done');d.hidden=false;d.scrollIntoView({block:'start'});
 });})();
 </script></body></html>
