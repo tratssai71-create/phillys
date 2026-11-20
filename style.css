@@ -700,3 +700,23 @@ html.modal-open{overflow:hidden}
  .ar3-dl>div{grid-template-columns:1fr;gap:6px;padding:16px 0}
  .pc-only{display:none}
 }
+
+/* ===== area map ===== */
+.ar3-vis:before{display:none}
+.am-fig{margin:0;background:#fff;border-radius:12px;padding:20px 20px 14px;box-shadow:0 10px 30px rgba(31,79,122,.08)}
+.am{display:block;width:100%;height:auto}
+.am path{stroke:#fff;stroke-width:1.4;stroke-linejoin:round}
+.am-off{fill:#e6ebf0}
+.am-on{fill:#bcd3ea;transition:fill .2s}
+.am-on:hover{fill:#9cbde0}
+.am-t{font-size:17px;font-weight:700;fill:var(--gd);text-anchor:middle;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;pointer-events:none}
+.am-s{font-size:13px}
+.am-pin path{fill:var(--gd)}
+.am-pulse{fill:rgba(31,79,122,.18)}
+.am-lab rect{fill:var(--gd)}
+.am-lab text{fill:#fff;font-size:14px;font-weight:700;text-anchor:middle}
+.am-fig figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 16px;margin-top:10px;font-size:12px;color:var(--mut)}
+.am-key{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);font-weight:700}
+.am-key i{display:inline-block;width:14px;height:14px;border-radius:3px;background:#bcd3ea}
+@media(max-width:1000px){.ar3-vis{margin:0}.am-fig{padding:12px 10px 10px}}
+.am-t{font-size:20px}.am-s{font-size:15px}.am{border-radius:6px}.am-fig{overflow:hidden}
