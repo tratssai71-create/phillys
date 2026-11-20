@@ -1123,3 +1123,7 @@ html.modal-open{overflow:hidden}
  .mn-b{background:var(--g)}
 }
 @media(max-width:1000px){.hd2 .gn{z-index:1}.hd2 .brand,.hd2 .hd-cta,.hd2 .mn-b{position:relative;z-index:2}.hd2 .hd-in{background:#fff;position:relative}}
+@media(max-width:1000px){
+ .mn-t:checked~.gn{box-shadow:0 12px 24px rgba(18,34,54,.18)}
+ .mn-t:checked~.gn:after{content:"";position:fixed;left:0;right:0;top:64px;bottom:0;background:rgba(18,34,54,.45);z-index:-1;pointer-events:none}
+}
