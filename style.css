@@ -2453,3 +2453,11 @@ main h1,main h2,main h3,.cta2 h2,.st-h,.st-q,.kv-h,.pg-h,.fv4-h,.vc-sum b,.vp-ca
 .mo .mf-h>span:nth-child(2){transition-delay:1.236s}
 .mo .mf.in .mf-h>span{-webkit-mask-position:0 0;mask-position:0 0}
 @media(prefers-reduced-motion:reduce){.mo .ink,.mo .mf-h>span{-webkit-mask-image:none;mask-image:none}}
+/* ===== cut-out service photos ===== */
+.photo.cut{background:radial-gradient(circle at 50% 61.8%,#FBFAF9 0,#FBFAF9 38.2%,rgba(251,250,249,0) 38.4%)!important;overflow:visible;border-radius:0!important;aspect-ratio:1.618/1!important}
+.photo.cut>span{display:none}
+.photo.cut img{object-fit:contain!important;object-position:50% 100%!important;filter:drop-shadow(0 10px 16px rgba(29,37,45,.10))}
+.photo.cut:after{content:"";position:absolute;left:23.6%;right:23.6%;bottom:0;height:1px;background:var(--sand-d)}
+.sv4 .photo.cut,.svm .photo.cut{min-height:0;height:auto}
+.mo .rv-ph.cut{clip-path:none!important}
+html{scroll-behavior:auto!important}
