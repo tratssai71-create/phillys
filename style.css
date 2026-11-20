@@ -2414,3 +2414,4 @@ main h1,main h2,main h3,.cta2 h2,.st-h,.st-q,.kv-h,.pg-h,.fv4-h,.vc-sum b,.vp-ca
 @media(max-width:1000px){.kv-h{font-size:min(41.9px,8.2vw)!important;letter-spacing:.06em!important}}
 @media(max-width:1000px) and (max-height:600px){.kv{min-height:520px}}
 @media(max-width:1000px){.hd-cta span,.hd-cta small{display:none!important}}
+@media(max-width:1000px){.kv-info .kv-tel{display:none!important}}
