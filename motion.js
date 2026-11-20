@@ -54,17 +54,23 @@
     es.forEach(function (e) {
       if (!e.isIntersecting) return;
       var el = e.target; io.unobserve(el);
-      if (el._ph) el._ph.classList.add('in');
       if (el.matches('.rv, .mf, .rc-stats, .ab3-gal, .vp-gal')) el.classList.add('in');
       if (el.matches('.ab3-gal, .vp-gal')) $$('.rv, .rv-ph', el).forEach(function (c) { c.classList.add('in'); });
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  /* photos wait until they are well inside the screen, so the reveal can be seen */
+  var ioPh = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      ioPh.unobserve(e.target); if (e.target._ph) e.target._ph.classList.add('in');
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -24% 0px' });
   $$('.rv, .mf, .rc-stats, .ab3-gal, .vp-gal').forEach(function (el) {
     if (!el.closest('.ab3-gal, .vp-gal') || el.matches('.ab3-gal, .vp-gal')) io.observe(el);
   });
   $$('.rv-ph').forEach(function (ph) {
     if (ph.closest('.ab3-gal, .vp-gal')) return;
-    var host = ph.parentNode; host._ph = ph; io.observe(host);
+    var host = ph.parentNode; host._ph = ph; ioPh.observe(host);
   });
 
   /* ---- hero intro ---- */
@@ -96,7 +102,7 @@
     pending = pending.filter(function (el) {
       if (el.classList.contains('in')) return false;
       var host = el.classList.contains('rv-ph') && !el.closest('.ab3-gal, .vp-gal') ? el.parentNode : el;
-      if (host.getBoundingClientRect().top < vh * 0.94) {
+      if (host.getBoundingClientRect().top < vh * (el.classList.contains('rv-ph') || el.matches('.ab3-gal, .vp-gal') ? 0.76 : 0.94)) {
         el.classList.add('in');
         if (el.matches('.ab3-gal, .vp-gal')) $$('.rv, .rv-ph', el).forEach(function (c) { c.classList.add('in'); });
         return false;

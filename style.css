@@ -2088,3 +2088,13 @@ p{margin-bottom:var(--s3)}
  .crs-btns{display:none}
 }
 .sv4-txt p:last-child{margin-bottom:0!important}
+/* ===== photo reveal: slower, visible (φ timing: 1.618s / 2.618s) ===== */
+.mo .rv-ph{clip-path:inset(0 0 100% 0);transition:clip-path 1.618s cubic-bezier(.65,0,.35,1)}
+.mo .rv-ph img{transform:scale(1.12);transition:transform 2.618s cubic-bezier(.22,.61,.36,1)}
+.mo .rv-ph.in{clip-path:inset(0 0 0 0)}
+.mo .rv-ph.in img{transform:scale(1)}
+.mo .ab3-gal li:nth-child(2) .rv-ph{transition-delay:.382s}
+.mo .ab3-gal li:nth-child(3) .rv-ph{transition-delay:.618s}
+.mo .vp-gal .vp-g:nth-child(2) .rv-ph{transition-delay:.236s}.mo .vp-gal .vp-g:nth-child(3) .rv-ph{transition-delay:.382s}.mo .vp-gal .vp-g:nth-child(4) .rv-ph{transition-delay:.618s}
+.mo .fv4-photo{transition:clip-path 1.618s cubic-bezier(.65,0,.35,1) .382s}
+@media(prefers-reduced-motion:reduce){.mo .rv-ph,.mo .rv-ph img{transition:none;clip-path:none;transform:none}}
