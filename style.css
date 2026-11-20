@@ -2725,3 +2725,9 @@ main,footer,.cta2{overflow-x:clip}
 @media(max-width:1000px){.mbar3{top:auto!important;bottom:0!important;left:0!important;right:0!important;-webkit-transform:translateZ(0);transform:translateZ(0)}}
 @media(max-width:1000px){.mbar3 a.m3-form{background:var(--g)}.mbar3 a.m3-form:active{background:var(--gd)}}
 @media(max-width:1000px){.m3-tel span{color:var(--g)!important}}
+/* about values: headings always fit the phone width (12 chars + spacing), broken only at phrase ends */
+@media(max-width:1000px){.vl-txt h3{font-size:min(var(--t5),calc((100vw - 52px)/13.4))!important}}
+/* size the value headings from their own column width so the longest phrase (12 chars) always fits */
+.vl-txt{container-type:inline-size}
+.vl-txt h3{font-size:min(var(--t6),calc(100cqw / 13.4))!important}
+@media(max-width:1000px){.vl-txt h3{font-size:min(var(--t5),calc(100cqw / 13.4))!important}}
