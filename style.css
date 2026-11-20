@@ -505,3 +505,20 @@ h1,h2,h3,.fv4-h{font-weight:700}
 .fv4-photo{border-radius:0;height:min(52vw,680px)}
 .fv4-card{right:max(24px,calc((100vw - 1200px)/2 + 24px));bottom:104px}
 @media(max-width:1000px){.fv4-visual{padding:0 0 48px}.fv4-photo{border-radius:0;height:66vw}.fv4-card{margin:-40px 16px 0}}
+/* ===== title position fix ===== */
+.ab3-en{margin:0 0 -.2em;font-size:clamp(56px,6.4vw,92px)}
+.ab3-ttl h2{padding-left:0}
+.ab3-ttl:after{margin-left:0}
+.ab3 .ab3-en{color:rgba(255,255,255,.95);text-shadow:0 1px 0 rgba(47,106,163,.06)}
+@media(max-width:1000px){.ab3-en{font-size:56px}}
+/* ===== service boxes full width ===== */
+.sv3-list{width:100vw;margin-left:calc(50% - 50vw);gap:28px}
+.sv3-box{border-radius:0;border-left:0;border-right:0;box-shadow:none;background:#f5f8fc;border-color:#e3ebf3}
+.sv3-txt{padding:64px 64px 64px max(24px,calc((100vw - 1200px)/2 + 24px))}
+.sv3-box.rev .sv3-txt{padding:64px max(24px,calc((100vw - 1200px)/2 + 24px)) 64px 64px}
+.sv3-ph{min-height:440px}
+@media(max-width:1000px){
+ .sv3-list{gap:20px}
+ .sv3-txt,.sv3-box.rev .sv3-txt{padding:28px 20px 32px}
+ .sv3-ph{min-height:0}
+}
