@@ -415,3 +415,32 @@ h1,h2,h3,.fv4-h{font-weight:700}
 }
 @media(max-width:480px){.ph2-term{min-width:0;padding:10px 4px}.ph2-term b{font-size:20px}.ph2-term span{font-size:10px}.ph2-op{font-size:16px}.ph2-eq{gap:6px;flex-wrap:nowrap}}
 .ph2-term span{white-space:nowrap}
+
+/* ===== about (reference style) ===== */
+.ab3{padding:104px 0 112px;overflow:hidden}
+.ab3-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.1fr);gap:56px;align-items:start}
+.ab3-ttl{border-left:3px solid var(--g);padding:2px 0 4px 22px}
+.ab3-en{margin:0 0 2px;color:var(--g);font-size:14px;font-weight:700;letter-spacing:.08em}
+.ab3-ttl h2{margin:0;font-size:clamp(26px,2.6vw,34px);color:var(--ink)}
+.ab3-body h3{margin:4px 0 14px;font-size:clamp(19px,1.8vw,22px);color:var(--ink)}
+.ab3-body p{margin:0;color:var(--ink);line-height:2}
+.ab3-more{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:24px;color:var(--g);font-weight:700;text-decoration:none}
+.ab3-more span{display:grid;place-items:center;width:40px;height:40px;border-radius:6px;background:var(--g);color:#fff;transition:transform .2s,background .2s}
+.ab3-more svg{width:20px;height:20px}
+.ab3-more:hover span{transform:translateX(4px);background:var(--gd)}
+.ab3-more:focus-visible{outline:3px solid var(--g);outline-offset:4px;border-radius:4px}
+.ab3-gal{list-style:none;margin:64px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;width:calc(100% + 120px);margin-left:-60px}
+.ab3-gal li{min-width:0}
+.ab3-gal li:nth-child(2){margin-top:40px}
+.ab3-ph{aspect-ratio:3/2;border-radius:10px}
+.ab3-gal p{margin:16px 4px 0;font-size:14px;line-height:1.8;color:var(--mut)}
+.ab3-gal b{display:block;font-size:18px;color:var(--gd);margin-bottom:2px}
+@media(prefers-reduced-motion:reduce){.ab3-more span{transition:none}}
+@media(max-width:1000px){
+ .ab3{padding:64px 0 72px}
+ .ab3-top{grid-template-columns:1fr;gap:24px}
+ .ab3-gal{width:auto;margin:40px 0 0;padding:0 20px;grid-template-columns:1fr;gap:28px}
+ .ab3-gal li:nth-child(2){margin-top:0}
+}
+@media(min-width:600px) and (max-width:1000px){.ab3-gal{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.ab3-gal li:nth-child(2){margin-top:24px}.ab3-gal b{font-size:15px}.ab3-gal p{font-size:12px}}
+@media(min-width:1001px){.ab3-gal{width:min(1320px,calc(100% - 48px));margin:64px auto 0;gap:32px}}
