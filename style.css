@@ -1283,3 +1283,37 @@ body,.gn a,.btn,.sv4-btn,.cf,.cta2-acts,.hd-cta,.mbar,table,dl{font-family:var(-
  .st-q{font-size:22px}
 }
 @media(max-width:600px){.sp-jump{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sp-jump a{width:100%;justify-content:space-between;padding:11px 12px;font-size:13px}}
+/* ===== golden-ratio palette =====
+   hue: brand blue 209.5deg + golden angle 137.5deg x n
+   n=1 347deg rose / n=2 124.5deg sage / n=4 39.5deg sand+gold, saturation x0.618
+   area: base(white+sand) 61.8% / blue family 23.6% / accents 14.6% */
+:root{--rose:#AF5C6E;--rose-l:#F3E3E6;--sage:#537F56;--sand:#F6F3ED;--sand-d:#ECE5D9;--gold:#79643C;--gold-l:#D8C9A8}
+/* sand: warm base for alternating sections & cards */
+.vc{background:linear-gradient(180deg,#fff 0%,var(--sand) 100%)}
+.ar3,.ab-what,.vp-act,.pr-alt{background:var(--sand)}
+.sv4{background:var(--sand)}
+.ar3-dl,.am-fig,.vp-card,.pr-alt .pr-card{border-color:var(--sand-d)}
+.vl-q,.vc-body,.svm-body .svm-note,.nt-box,.cf-agree,.cf-who,.ft2-area{background:var(--sand)}
+.ft2{background:#F8F6F2;border-top-color:var(--sand-d)}
+.ft2-top{border-bottom-color:var(--sand-d)}
+.ft2-nav a{border-bottom-color:var(--sand-d)}
+.sp-who li,.rc-ben li{border-top-color:var(--gold-l)}
+/* gold: English labels & numbers */
+.ab3-ttl .ab3-en,.ab3 .ab3-ttl .ab3-en,.ab-what .ab3-ttl .ab3-en{color:var(--gold)}
+.ab3-ttl .ab3-en:before{background:var(--gold)}
+.sv4-no,.nt-no,.rc-bn{color:var(--gold-l)}
+.sv4-no:after{background:var(--gold-l)}
+.vl-no,.sv3-en{color:var(--gold)}
+.cta2-en,.og-en{color:var(--gold-l)}
+.vp-no{color:var(--gold-l)}
+/* rose: the warm accent, used sparingly */
+.fill-word{background-image:linear-gradient(transparent 62%,var(--rose-l) 62%,var(--rose-l) 92%,transparent 92%)}
+.vl-q:before,.vc-body:before{color:var(--rose)}
+.vc-body:before{opacity:.7}
+.cf-l em{background:var(--rose)}
+.st-q{color:var(--gd)}
+.st-cite{color:var(--rose)}
+.mf-sign span{color:var(--gold-l)}
+/* sage: checks */
+.sp-list li:before,.svm-body li:before,.sv3-txt li:before,.check li:before{border-color:var(--sage)}
+.check li:before{background:var(--sage)}
