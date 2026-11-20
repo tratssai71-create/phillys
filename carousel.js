@@ -39,7 +39,7 @@
 
     function setW() { return reduce ? 0 : slides[0].offsetLeft - all[0].offsetLeft; } // width of one set (offset of first real slide)
     function startX(i) { return all[i].offsetLeft - all[0].offsetLeft; }
-    var setWidth = 0, pos = 0, d = 0;
+    var setWidth = 0, d = 0;
     function eff() { return track.scrollLeft + d; }
     function setD(v) { d = v; track.style.setProperty('--dx', (-d).toFixed(3) + 'px'); }
     function commit() { if (!d) return; var x = Math.round(track.scrollLeft + d); setD(0); track.scrollLeft = x; }
@@ -62,15 +62,19 @@
       else if (track.scrollLeft < setWidth * 0.5) { track.scrollLeft += setWidth; }
     }
 
-    /* drift */
-    var paused = false, resumeT, last = 0, visible = true;
-    function pause(ms) { commit(); paused = true; clearTimeout(resumeT); resumeT = setTimeout(function () { paused = false; pos = track.scrollLeft; }, ms || 2618); }
-    var lastUpd = 0;
+    /* drift — paused only while hovered / pressed / keyboard-focused; resumes by itself on release */
+    var held = false, hovered = false, kb = false, until = 0, last = 0, visible = true, vel = SPEED, wasPaused = false, lastUpd = 0;
+    function now() { return performance.now(); }
+    function isPaused() { return held || hovered || kb || now() < until; }
+    function hold(ms) { commit(); vel = 0; until = Math.max(until, now() + ms); }
     function tick(t) {
       requestAnimationFrame(tick);
       var dt = last ? Math.min(50, t - last) : 16; last = t;
-      if (reduce || paused || !visible || document.hidden) return;
-      setD(d + SPEED * dt / 1000);
+      if (reduce || !visible || document.hidden) return;
+      if (isPaused()) { vel = 0; wasPaused = true; return; }
+      if (wasPaused) { wasPaused = false; commit(); wrapPos(); }
+      vel += (SPEED - vel) * Math.min(1, dt / 900); // ease back to speed
+      setD(d + vel * dt / 1000);
       if (track.scrollLeft + d >= setWidth * 2) {
         var x = track.scrollLeft + d - setWidth, base = Math.floor(x);
         track.scrollLeft = base; setD(x - base);
@@ -78,14 +82,14 @@
       if (t - lastUpd > 250) { lastUpd = t; update(); }
     }
     function goRel(dir) {
-      pause(4236);
+      hold(4236);
       var i = 0, x = eff(), bd = Infinity;
       all.forEach(function (s, k) { var dd = Math.abs(startX(k) - x); if (dd < bd) { bd = dd; i = k; } });
       var target = all[Math.max(0, Math.min(all.length - 1, i + dir))];
       track.scrollTo({ left: startX(all.indexOf(target)), behavior: 'smooth' });
     }
     function goTo(k) {
-      pause(4236);
+      hold(4236);
       var base = reduce ? k : N + k;
       track.scrollTo({ left: startX(base), behavior: 'smooth' });
     }
@@ -96,19 +100,27 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); goRel(1); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); goRel(-1); }
     });
-    ['pointerdown', 'touchstart', 'wheel'].forEach(function (ev) { track.addEventListener(ev, function () { pause(2618); }, { passive: true }); });
-    track.addEventListener('mouseenter', function () { commit(); paused = true; clearTimeout(resumeT); });
-    track.addEventListener('mouseleave', function () { pause(800); });
-    track.addEventListener('focusin', function () { pause(6000); });
+    // press: stop while the finger / mouse button is down, resume shortly after release
+    track.addEventListener('pointerdown', function () { commit(); vel = 0; held = true; hovered = false; }, { passive: true });
+    track.addEventListener('touchstart', function () { commit(); vel = 0; held = true; hovered = false; }, { passive: true });
+    function release() { if (!held) return; held = false; hold(1000); }
+    ['pointerup', 'pointercancel', 'touchend', 'touchcancel'].forEach(function (ev) { addEventListener(ev, release, { passive: true }); });
+    track.addEventListener('wheel', function () { hold(1236); }, { passive: true });
+    // hover (mouse only): stop while over, resume on leave
+    track.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { commit(); vel = 0; hovered = true; } });
+    track.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovered = false; held = false; hold(300); } });
+    // keyboard focus only (a mouse click also focuses the track — that must not pause it)
+    track.addEventListener('focusin', function () { kb = track.matches(':focus-visible'); if (kb) commit(); });
+    track.addEventListener('focusout', function () { kb = false; });
 
     var raf; track.addEventListener('scroll', function () {
       cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(function () { if (paused) { wrapPos(); } update(); });
+      raf = requestAnimationFrame(function () { if (isPaused()) { if (!held) until = Math.max(until, now() + 600); wrapPos(); } update(); });
     }, { passive: true });
 
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(track);
-    function init() { setWidth = setW(); track.scrollLeft = setWidth; pos = setWidth; update(); }
-    addEventListener('resize', function () { commit(); var i = curIndex(); setWidth = setW(); track.scrollLeft = startX(reduce ? i : N + i); pos = track.scrollLeft; update(); });
+    function init() { setWidth = setW(); track.scrollLeft = setWidth; update(); }
+    addEventListener('resize', function () { commit(); var i = curIndex(); setWidth = setW(); track.scrollLeft = startX(reduce ? i : N + i); update(); });
     if (document.readyState === 'complete') init(); else addEventListener('load', init);
     if (!reduce) requestAnimationFrame(tick);
   });
