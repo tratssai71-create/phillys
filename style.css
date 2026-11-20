@@ -2652,7 +2652,9 @@ a[href^="tel:"],.nw{white-space:nowrap}
 @keyframes ld-safety{to{opacity:0;visibility:hidden}}
 @media(prefers-reduced-motion:reduce){.ld{display:none!important}}
 /* ===== mobile: never wider than the screen ===== */
-html,body{max-width:100%;overflow-x:clip}
+/* clip stray overflow on content blocks only — overflow on html/body breaks position:fixed in iOS Safari */
+html,body{max-width:none;overflow-x:visible}
+main,footer,.cta2{overflow-x:clip}
 @media(max-width:1000px){
  main *,footer *,.cta2 *,.hd *{min-width:0}
  .pg-h{white-space:normal!important;font-size:min(var(--t6),8.6vw)!important}
@@ -2719,3 +2721,5 @@ html,body{max-width:100%;overflow-x:clip}
  .mf-sign span{font-size:min(var(--t1),3.4vw)!important}
 }
 @media(max-width:1000px){.mf-panel{gap:var(--s3)!important}.mf-h{padding-left:var(--s3)}}@media(max-width:360px){.mf-panel{padding-left:var(--s3)!important;padding-right:var(--s3)!important}.mf-h{letter-spacing:.12em}}
+/* bottom bar: pin to the viewport bottom explicitly (iOS Safari) */
+@media(max-width:1000px){.mbar3{top:auto!important;bottom:0!important;left:0!important;right:0!important;-webkit-transform:translateZ(0);transform:translateZ(0)}}
