@@ -614,3 +614,9 @@ html.modal-open{overflow:hidden}
  .svm-body h3{font-size:22px}
  .svm-cta .sv4-btn{width:100%}
 }
+/* photo focal points */
+.photo img[src$="act3.jpg"]{object-position:22% 40%}
+.photo img[src$="service2.jpg"]{object-position:68% 40%}
+.photo img[src$="rehab.jpg"]{object-position:62% 45%}
+.photo img[src$="area.jpg"]{object-position:28% 45%}
+@media(min-width:801px){.svm-ph{min-height:420px}}
