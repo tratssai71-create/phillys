@@ -2191,3 +2191,7 @@ p{margin-bottom:var(--s3)}
 .ab3-gal.crs-auto li:last-child{margin-right:0!important}
 .crs-auto ~ .crs-nav .crs-btn:disabled{opacity:1}
 @media(max-width:1000px){.ft2{padding-bottom:calc(var(--s6) + env(safe-area-inset-bottom,0px))!important}}
+@media(max-width:1000px){
+ .ft2{padding-bottom:calc(var(--s6) + var(--c2) + env(safe-area-inset-bottom,0px))!important}
+ .m3-tel span{font-size:var(--t4);letter-spacing:.06em}
+}
