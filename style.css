@@ -107,3 +107,6 @@ table.co td{text-align:left;font-weight:400}
  .sec{padding:52px 0}
  th{width:50%}
 }
+
+.brand img{height:44px;width:auto;display:block}
+@media(max-width:900px){.brand img{height:36px}}
