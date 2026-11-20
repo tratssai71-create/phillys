@@ -2480,3 +2480,18 @@ html{scroll-behavior:auto!important}
 .mo .mf-h>span:nth-child(2){transition-delay:2.236s!important}
 .mo .mf-body>*{transition-delay:3.618s!important}
 @media(prefers-reduced-motion:reduce){.mo .ink{letter-spacing:.06em!important}}
+
+/* ===== arch frame for service cut-outs ===== */
+.photo.cut{background:none!important;overflow:visible!important;aspect-ratio:1.618/1!important;isolation:isolate}
+.photo.cut:before{content:"";position:absolute;z-index:-1;left:19.1%;right:19.1%;top:14.6%;bottom:0;border-radius:999px 999px 0 0;background:#FBFAF9;box-shadow:inset 0 0 0 1px rgba(201,182,142,.35)}
+.photo.cut:after{left:9%!important;right:9%!important;background:var(--gold-l)!important;opacity:.45}
+.photo.cut img{clip-path:inset(-40% 19.1% 0 19.1%);filter:drop-shadow(0 6px 10px rgba(29,37,45,.08))!important}
+.sv4:nth-child(2) .photo.cut:before{background:var(--sage-t)}
+
+/* ===== accordion: lingering open/close ===== */
+.vc-item .vc-body{overflow:hidden}
+.vc-ic,.vc-ic:before,.vc-ic:after{transition:background 1.236s cubic-bezier(.16,1,.3,1),border-color 1.236s cubic-bezier(.16,1,.3,1),transform 1.236s cubic-bezier(.16,1,.3,1)!important}
+.vc-item{transition:border-color 1.236s cubic-bezier(.16,1,.3,1)!important}
+.vc-item.is-closing .vc-ic{background:none!important;border-color:var(--sage-l)!important}
+.vc-item.is-closing .vc-ic:before{background:var(--g)!important}
+.vc-item.is-closing .vc-ic:after{transform:translate(-50%,-50%) rotate(90deg)!important;background:var(--g)!important}

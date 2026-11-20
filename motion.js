@@ -66,6 +66,16 @@
 
   /* ---- hero intro ---- */
   requestAnimationFrame(function () { setTimeout(function () { root.classList.add('mo-ready'); }, 60); });
+  /* replay the headline motion when the page is shown again (back/forward cache) */
+  addEventListener('pageshow', function (e) {
+    if (!e.persisted) return;
+    root.classList.remove('mo-ready');
+    $$('.mf').forEach(function (m) { m.classList.remove('in'); });
+    requestAnimationFrame(function () { requestAnimationFrame(function () {
+      root.classList.add('mo-ready');
+      $$('.mf').forEach(function (m) { if (m.getBoundingClientRect().top < innerHeight) m.classList.add('in'); });
+    }); });
+  });
 
   /* ---- count-up (recruit stats) ---- */
   $$('.rc-stats b').forEach(function (b) {
